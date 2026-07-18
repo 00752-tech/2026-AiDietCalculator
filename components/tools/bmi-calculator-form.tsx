@@ -94,8 +94,7 @@ export function BmiCalculatorForm() {
             BMI doesn&apos;t account for muscle mass or frame size — it&apos;s a starting point, not a diagnosis.
           </p>
           <AffiliateBridge
-            headline="BMI is a snapshot. What you do next matters more."
-            body="If your number came back higher than you'd like, see the daily formula built to support consistent, sustainable results."
+            result={result.value}
           />
           <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
