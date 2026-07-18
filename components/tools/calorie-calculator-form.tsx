@@ -154,7 +154,7 @@ export function CalorieCalculatorForm() {
       ) : isAnalyzing ? (
         <SilentDelay />
       ) : result ? (
-        <div className="space-y-6 text-center">
+        <div className="animate-in fade-in duration-700 space-y-6 text-center">
           <div className="rounded-xl bg-[#0F1B2A] p-6 font-mono text-white">
             <div className="flex items-baseline justify-between border-b border-white/10 py-3">
               <span className="text-xs uppercase tracking-wide text-white/50">Maintenance calories</span>

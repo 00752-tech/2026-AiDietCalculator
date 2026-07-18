@@ -156,7 +156,7 @@ export function MacroCalculatorForm() {
       ) : isAnalyzing ? (
         <SilentDelay />
       ) : result ? (
-        <div className="space-y-6 text-center">
+        <div className="animate-in fade-in duration-700 space-y-6 text-center">
           <div className="grid grid-cols-3 gap-3 rounded-xl bg-[#0F1B2A] p-6 font-mono text-white">
             <div>
               <p className="text-4xl font-light text-[#4FD1D0]">{result.proteinG}g</p>

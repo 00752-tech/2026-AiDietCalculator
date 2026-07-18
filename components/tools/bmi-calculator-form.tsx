@@ -92,7 +92,7 @@ export function BmiCalculatorForm() {
       ) : isAnalyzing ? (
         <SilentDelay />
       ) : result ? (
-        <div className="space-y-6 text-center">
+        <div className="animate-in fade-in duration-700 space-y-6 text-center">
           <div>
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result.value}</p>
             <p className="mt-3 font-mono text-base uppercase tracking-wide" style={{ color: result.color }}>

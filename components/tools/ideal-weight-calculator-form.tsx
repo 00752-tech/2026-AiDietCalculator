@@ -100,7 +100,7 @@ export function IdealWeightCalculatorForm() {
       ) : isAnalyzing ? (
         <SilentDelay />
       ) : result !== null ? (
-        <div className="space-y-6 text-center">
+        <div className="animate-in fade-in duration-700 space-y-6 text-center">
           <div>
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result} {units === "metric" ? "kg" : "lbs"}</p>
             <p className="mt-3 text-base leading-relaxed text-[#0F1B2A]/60">estimated ideal weight (Devine formula)</p>
