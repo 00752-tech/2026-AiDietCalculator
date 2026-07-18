@@ -12,8 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { SilentDelay } from "@/components/tools/silent-delay"
-import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
+import { ProcessingState } from "@/components/tools/processing-state"
+import { useDelayedCalculation } from "@/lib/use-delayed-calculation"
 import { type Sex, bmr as calcBmr, inchesToCm, lbsToKg } from "@/lib/calculators"
 
 type UnitSystem = "metric" | "imperial"
@@ -24,9 +24,7 @@ export function BmrCalculatorForm() {
   const [age, setAge] = useState("")
   const [height, setHeight] = useState("")
   const [weight, setWeight] = useState("")
-  const [result, setResult] = useState<number | null>(null)
-  const [showResults, setShowResults] = useState(false)
-  const isAnalyzing = useDiagnosticDelay(showResults && result === null)
+  const { status, result, run, reset } = useDelayedCalculation<number>()
 
   const canSubmit = age && height && weight
 
@@ -49,12 +47,11 @@ export function BmrCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!canSubmit) return
-    setShowResults(true)
-    setTimeout(() => {
+    run(() => {
       const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
       const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
-      setResult(calcBmr(sex, weightKg, heightCm, Number(age)))
-    }, 3000)
+      return calcBmr(sex, weightKg, heightCm, Number(age))
+    })
   }
 
   return (
@@ -115,20 +112,20 @@ export function BmrCalculatorForm() {
             Calculate BMR
           </Button>
         </form>
-      ) : isAnalyzing ? (
-        <SilentDelay />
-      ) : result !== null ? (
-        <div className="animate-in fade-in duration-700 space-y-6 text-center">
+      ) : status === "processing" ? (
+        <ProcessingState />
+      ) : status === "done" && result !== null ? (
+        <div className="animate-in fade-in duration-500 space-y-6 text-center">
           <div>
-            <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result}</p>
+            <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result.toFixed(2)}</p>
             <p className="mt-3 text-base leading-relaxed text-[#0F1B2A]/60">kcal/day at complete rest (Mifflin-St Jeor)</p>
           </div>
           <AffiliateBridge 
-            result={`${result} kcal/day`} 
+            result={`${result.toFixed(2)} kcal/day`} 
             resultLabel="Your Metabolic Baseline"
             description="Your BMR is the minimum energy your body burns at rest—just breathing, thinking, and maintaining essential functions. This number serves as the foundation for all your calorie targets. Understanding your BMR helps you make smarter decisions about nutrition and activity levels for sustainable metabolic health."
           />
-          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => reset()} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>

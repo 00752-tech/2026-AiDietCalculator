@@ -12,8 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { SilentDelay } from "@/components/tools/silent-delay"
-import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
+import { ProcessingState } from "@/components/tools/processing-state"
+import { useDelayedCalculation } from "@/lib/use-delayed-calculation"
 import {
   type Sex,
   type Activity,
@@ -32,15 +32,13 @@ type UnitSystem = "metric" | "imperial"
 
 export function MacroCalculatorForm() {
   const [units, setUnits] = useState<UnitSystem>("imperial")
-  const [sex, setSex] = useState<Sex>("female")
+  const [sex, setSex] = useState<Sex>("male")
   const [age, setAge] = useState("")
   const [height, setHeight] = useState("")
   const [weight, setWeight] = useState("")
-  const [activity, setActivity] = useState<Activity>("light")
+  const [activity, setActivity] = useState<Activity>("sedentary")
   const [goal, setGoal] = useState<Goal>("lose")
-  const [result, setResult] = useState<MacroSplit | null>(null)
-  const [showResults, setShowResults] = useState(false)
-  const isAnalyzing = useDiagnosticDelay(showResults && result === null)
+  const { status, result, run, reset } = useDelayedCalculation<MacroSplit>()
 
   const canSubmit = age && height && weight
 
@@ -63,19 +61,18 @@ export function MacroCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!canSubmit) return
-    setShowResults(true)
-    setTimeout(() => {
+    run(() => {
       const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
       const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
       const bmrValue = calcBmr(sex, weightKg, heightCm, Number(age))
       const target = calorieTarget(calcTdee(bmrValue, activity), goal)
-      setResult(macroSplit(target, weightKg, goal))
-    }, 3000)
+      return macroSplit(target, weightKg, goal)
+    })
   }
 
   return (
     <div className="rounded-2xl border border-[#0F1B2A]/10 bg-white p-6 shadow-sm md:p-8">
-      {!result ? (
+      {status === "idle" ? (
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="flex gap-2 border-b border-[#0F1B2A]/10 pb-4">
             <button
@@ -153,10 +150,10 @@ export function MacroCalculatorForm() {
             Calculate Macros
           </Button>
         </form>
-      ) : isAnalyzing ? (
-        <SilentDelay />
-      ) : result ? (
-        <div className="animate-in fade-in duration-700 space-y-6 text-center">
+      ) : status === "processing" ? (
+        <ProcessingState />
+      ) : status === "done" && result ? (
+        <div className="animate-in fade-in duration-500 space-y-6 text-center">
           <div className="grid grid-cols-3 gap-3 rounded-xl bg-[#0F1B2A] p-6 font-mono text-white">
             <div>
               <p className="text-4xl font-light text-[#4FD1D0]">{result.proteinG}g</p>
@@ -176,7 +173,7 @@ export function MacroCalculatorForm() {
             resultLabel="Your Macro Split"
             description="This macro breakdown is tailored to your calorie target and fitness goal. Tracking these ratios ensures you're not just eating enough calories, but eating them in the right proportion to support muscle development and metabolic optimization. Pair this with consistent training for best results."
           />
-          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => reset()} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>

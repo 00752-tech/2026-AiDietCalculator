@@ -12,8 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { SilentDelay } from "@/components/tools/silent-delay"
-import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
+import { ProcessingState } from "@/components/tools/processing-state"
+import { useDelayedCalculation } from "@/lib/use-delayed-calculation"
 import { type Goal, proteinTarget, lbsToKg } from "@/lib/calculators"
 
 type UnitSystem = "metric" | "imperial"
@@ -22,9 +22,7 @@ export function ProteinCalculatorForm() {
   const [units, setUnits] = useState<UnitSystem>("imperial")
   const [weight, setWeight] = useState("")
   const [goal, setGoal] = useState<Goal>("lose")
-  const [result, setResult] = useState<number | null>(null)
-  const [showResults, setShowResults] = useState(false)
-  const isAnalyzing = useDiagnosticDelay(showResults && result === null)
+  const { status, result, run, reset } = useDelayedCalculation<number>()
 
   function handleUnitToggle(newUnits: UnitSystem) {
     if (!weight) {
@@ -43,11 +41,10 @@ export function ProteinCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!weight) return
-    setShowResults(true)
-    setTimeout(() => {
+    run(() => {
       const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
-      setResult(proteinTarget(weightKg, goal))
-    }, 3000)
+      return proteinTarget(weightKg, goal)
+    })
   }
 
   return (
@@ -97,20 +94,20 @@ export function ProteinCalculatorForm() {
             Calculate Protein Target
           </Button>
         </form>
-      ) : isAnalyzing ? (
-        <SilentDelay />
-      ) : result !== null ? (
-        <div className="animate-in fade-in duration-700 space-y-6 text-center">
+      ) : status === "processing" ? (
+        <ProcessingState />
+      ) : status === "done" && result !== null ? (
+        <div className="animate-in fade-in duration-500 space-y-6 text-center">
           <div>
-            <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result}g</p>
+            <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result.toFixed(2)}g</p>
             <p className="mt-3 text-lg text-[#0F1B2A]/60">recommended protein per day</p>
           </div>
           <AffiliateBridge 
-            result={`${result}g`} 
+            result={`${result.toFixed(2)}g`} 
             resultLabel="Your Daily Protein Target"
             description="Your protein target is calculated based on your body weight and fitness goals. Hitting this daily target supports muscle recovery, metabolic function, and sustained energy. Consistency with this number, combined with resistance training and proper recovery, creates the foundation for body composition changes."
           />
-          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => reset()} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>

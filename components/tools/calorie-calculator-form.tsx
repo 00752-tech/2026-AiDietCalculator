@@ -12,8 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { SilentDelay } from "@/components/tools/silent-delay"
-import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
+import { ProcessingState } from "@/components/tools/processing-state"
+import { useDelayedCalculation } from "@/lib/use-delayed-calculation"
 import {
   type Sex,
   type Activity,
@@ -30,15 +30,13 @@ type UnitSystem = "metric" | "imperial"
 
 export function CalorieCalculatorForm() {
   const [units, setUnits] = useState<UnitSystem>("imperial")
-  const [sex, setSex] = useState<Sex>("female")
+  const [sex, setSex] = useState<Sex>("male")
   const [age, setAge] = useState("")
   const [height, setHeight] = useState("")
   const [weight, setWeight] = useState("")
-  const [activity, setActivity] = useState<Activity>("light")
+  const [activity, setActivity] = useState<Activity>("sedentary")
   const [goal, setGoal] = useState<Goal>("lose")
-  const [result, setResult] = useState<{ tdee: number; target: number } | null>(null)
-  const [showResults, setShowResults] = useState(false)
-  const isAnalyzing = useDiagnosticDelay(showResults && !result)
+  const { status, result, run, reset } = useDelayedCalculation<{ tdee: number; target: number }>()
 
   const canSubmit = age && height && weight
 
@@ -61,19 +59,18 @@ export function CalorieCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!canSubmit) return
-    setShowResults(true)
-    setTimeout(() => {
+    run(() => {
       const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
       const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
       const bmrValue = calcBmr(sex, weightKg, heightCm, Number(age))
       const tdeeValue = calcTdee(bmrValue, activity)
-      setResult({ tdee: tdeeValue, target: calorieTarget(tdeeValue, goal) })
-    }, 3000)
+      return { tdee: tdeeValue, target: calorieTarget(tdeeValue, goal) }
+    })
   }
 
   return (
     <div className="rounded-2xl border border-[#0F1B2A]/10 bg-white p-6 shadow-sm md:p-8">
-      {!result ? (
+      {status === "idle" ? (
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="flex gap-2 border-b border-[#0F1B2A]/10 pb-4">
             <button
@@ -151,10 +148,10 @@ export function CalorieCalculatorForm() {
             Calculate Calories
           </Button>
         </form>
-      ) : isAnalyzing ? (
-        <SilentDelay />
-      ) : result ? (
-        <div className="animate-in fade-in duration-700 space-y-6 text-center">
+      ) : status === "processing" ? (
+        <ProcessingState />
+      ) : status === "done" && result ? (
+        <div className="animate-in fade-in duration-500 space-y-6 text-center">
           <div className="rounded-xl bg-[#0F1B2A] p-6 font-mono text-white">
             <div className="flex items-baseline justify-between border-b border-white/10 py-3">
               <span className="text-xs uppercase tracking-wide text-white/50">Maintenance calories</span>
@@ -170,7 +167,7 @@ export function CalorieCalculatorForm() {
             resultLabel="Your Calorie Target"
             description="Your calorie target is calibrated to your current metabolic output and activity level. Hitting this number consistently—not perfectly, but consistently—creates the foundation for sustainable body composition change. The key is pairing this target with whole foods and resistance training for optimal results."
           />
-          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => reset()} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>
