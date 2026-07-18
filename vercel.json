@@ -3,10 +3,5 @@
   "outputDirectory": ".next",
   "env": {
     "SKIP_BUILD_SOURCEMAP": "true"
-  },
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- '*.md' '*.txt' '.v0'",
-  "github": {
-    "enabled": true,
-    "production": "v0/passiveincomestreaming-9186-d70a37b5"
   }
 }
