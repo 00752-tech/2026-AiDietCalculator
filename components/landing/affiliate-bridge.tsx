@@ -28,9 +28,14 @@ export function AffiliateBridge({
       <Button
         asChild
         size="lg"
-        className="h-auto w-full rounded-full bg-[#D64545] py-4 text-base font-medium text-white hover:bg-[#D64545]/90"
+        className="h-auto w-full rounded-full bg-[#D64545] py-4 font-medium text-white hover:bg-[#D64545]/90"
       >
-        <a href={AFFILIATE_URL} rel="sponsored noopener" target="_blank">
+        <a 
+          href={AFFILIATE_URL} 
+          rel="sponsored noopener" 
+          target="_blank"
+          className="text-sm md:text-base whitespace-nowrap inline-block"
+        >
           See the Metabolic Catalyst Formula →
         </a>
       </Button>
