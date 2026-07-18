@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { SilentDelay } from "@/components/tools/silent-delay"
 import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import {
   type Sex,
@@ -154,7 +154,7 @@ export function MacroCalculatorForm() {
           </Button>
         </form>
       ) : isAnalyzing ? (
-        <AnalyzingState />
+        <SilentDelay />
       ) : result ? (
         <div className="space-y-6 text-center">
           <div className="grid grid-cols-3 gap-3 rounded-xl bg-[#0F1B2A] p-6 font-mono text-white">
@@ -171,7 +171,11 @@ export function MacroCalculatorForm() {
               <p className="mt-2 text-sm uppercase tracking-wide text-white/50">Fat</p>
             </div>
           </div>
-          <AffiliateBridge result={`${result.proteinG}P / ${result.carbG}C / ${result.fatG}F`} resultLabel="Your Macro Split" />
+          <AffiliateBridge 
+            result={`${result.proteinG}P / ${result.carbG}C / ${result.fatG}F`} 
+            resultLabel="Your Macro Split"
+            description="This macro breakdown is tailored to your calorie target and fitness goal. Tracking these ratios ensures you're not just eating enough calories, but eating them in the right proportion to support muscle development and metabolic optimization. Pair this with consistent training for best results."
+          />
           <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>

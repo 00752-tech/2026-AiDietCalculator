@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { SilentDelay } from "@/components/tools/silent-delay"
 import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import { type Goal, proteinTarget, lbsToKg } from "@/lib/calculators"
 
@@ -98,14 +98,18 @@ export function ProteinCalculatorForm() {
           </Button>
         </form>
       ) : isAnalyzing ? (
-        <AnalyzingState />
+        <SilentDelay />
       ) : result !== null ? (
         <div className="space-y-6 text-center">
           <div>
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result}g</p>
             <p className="mt-3 text-lg text-[#0F1B2A]/60">recommended protein per day</p>
           </div>
-          <AffiliateBridge result={`${result}g`} resultLabel="Your Daily Protein Target" />
+          <AffiliateBridge 
+            result={`${result}g`} 
+            resultLabel="Your Daily Protein Target"
+            description="Your protein target is calculated based on your body weight and fitness goals. Hitting this daily target supports muscle recovery, metabolic function, and sustained energy. Consistency with this number, combined with resistance training and proper recovery, creates the foundation for body composition changes."
+          />
           <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>

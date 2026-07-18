@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { SilentDelay } from "@/components/tools/silent-delay"
 import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import { type Sex, bmr as calcBmr, inchesToCm, lbsToKg } from "@/lib/calculators"
 
@@ -116,14 +116,18 @@ export function BmrCalculatorForm() {
           </Button>
         </form>
       ) : isAnalyzing ? (
-        <AnalyzingState />
+        <SilentDelay />
       ) : result !== null ? (
         <div className="space-y-6 text-center">
           <div>
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result}</p>
             <p className="mt-3 text-base leading-relaxed text-[#0F1B2A]/60">kcal/day at complete rest (Mifflin-St Jeor)</p>
           </div>
-          <AffiliateBridge result={`${result} kcal/day`} resultLabel="Your Metabolic Baseline" />
+          <AffiliateBridge 
+            result={`${result} kcal/day`} 
+            resultLabel="Your Metabolic Baseline"
+            description="Your BMR is the minimum energy your body burns at rest—just breathing, thinking, and maintaining essential functions. This number serves as the foundation for all your calorie targets. Understanding your BMR helps you make smarter decisions about nutrition and activity levels for sustainable metabolic health."
+          />
           <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>

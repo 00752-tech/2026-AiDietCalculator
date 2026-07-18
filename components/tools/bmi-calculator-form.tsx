@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { SilentDelay } from "@/components/tools/silent-delay"
 import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import { bmi, bmiCategory, inchesToCm, lbsToKg } from "@/lib/calculators"
 
@@ -90,7 +90,7 @@ export function BmiCalculatorForm() {
           </Button>
         </form>
       ) : isAnalyzing ? (
-        <AnalyzingState />
+        <SilentDelay />
       ) : result ? (
         <div className="space-y-6 text-center">
           <div>
@@ -105,6 +105,7 @@ export function BmiCalculatorForm() {
           <AffiliateBridge
             result={result.value}
             resultLabel="Your BMI Reading"
+            description="Your BMI is one health metric among many. It provides a general overview of body weight relative to height, but it doesn't measure body composition. When combined with regular strength training and cardiovascular activity, maintaining a healthy BMI supports long-term metabolic health and energy levels."
           />
           <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate

@@ -7,7 +7,8 @@ const AFFILIATE_URL = "/recommend/catalyst"
 interface AffiliateBridgeProps {
   /** Optional per-page override so each calculator can bridge with a relevant line. */
   headline?: string
-  body?: string
+  /** Personalized description for the specific calculator (required). */
+  description: string
   result?: string | number
   /** Context-aware label for the result (e.g., "Your Daily Protein Target", "Your Metabolic Baseline") */
   resultLabel?: string
@@ -15,7 +16,7 @@ interface AffiliateBridgeProps {
 
 export function AffiliateBridge({
   headline,
-  body = "This number represents your body's current resting output. The data confirms you are capable of weight loss, but \"capability\" isn't \"efficiency.\" Most failures at this stage happen because the body hits a metabolic plateau—it defends its current weight rather than burning it. To solve for this, we have to introduce a catalyst that shifts your metabolism from \"defensive mode\" into \"optimization mode.\"",
+  description,
   result,
   resultLabel = "Your Metabolic Baseline",
 }: AffiliateBridgeProps) {
@@ -27,7 +28,7 @@ export function AffiliateBridge({
         Recommended for your results
       </p>
       <h3 className="mb-3 font-serif text-2xl text-[#0F1B2A]">{defaultHeadline}</h3>
-      <p className="mx-auto mb-6 max-w-sm text-base leading-relaxed text-[#0F1B2A]/70">{body}</p>
+      <p className="mx-auto mb-6 max-w-sm text-base leading-relaxed text-[#0F1B2A]/70">{description}</p>
       <Button
         asChild
         size="lg"

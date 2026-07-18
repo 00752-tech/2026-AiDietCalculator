@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { SilentDelay } from "@/components/tools/silent-delay"
 import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import {
   type Sex,
@@ -152,7 +152,7 @@ export function CalorieCalculatorForm() {
           </Button>
         </form>
       ) : isAnalyzing ? (
-        <AnalyzingState />
+        <SilentDelay />
       ) : result ? (
         <div className="space-y-6 text-center">
           <div className="rounded-xl bg-[#0F1B2A] p-6 font-mono text-white">
@@ -165,7 +165,11 @@ export function CalorieCalculatorForm() {
               <span className="text-2xl text-[#4FD1D0]">{result.target} kcal/day</span>
             </div>
           </div>
-          <AffiliateBridge result={`${result.target} kcal/day`} resultLabel="Your Calorie Target" />
+          <AffiliateBridge 
+            result={`${result.target} kcal/day`} 
+            resultLabel="Your Calorie Target"
+            description="Your calorie target is calibrated to your current metabolic output and activity level. Hitting this number consistently—not perfectly, but consistently—creates the foundation for sustainable body composition change. The key is pairing this target with whole foods and resistance training for optimal results."
+          />
           <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>

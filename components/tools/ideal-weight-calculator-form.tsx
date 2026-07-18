@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { SilentDelay } from "@/components/tools/silent-delay"
 import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import { type Sex, idealWeightKg, inchesToCm, kgToLbs } from "@/lib/calculators"
 
@@ -98,14 +98,18 @@ export function IdealWeightCalculatorForm() {
           </Button>
         </form>
       ) : isAnalyzing ? (
-        <AnalyzingState />
+        <SilentDelay />
       ) : result !== null ? (
         <div className="space-y-6 text-center">
           <div>
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result} {units === "metric" ? "kg" : "lbs"}</p>
             <p className="mt-3 text-base leading-relaxed text-[#0F1B2A]/60">estimated ideal weight (Devine formula)</p>
           </div>
-          <AffiliateBridge result={`${result} ${units === "metric" ? "kg" : "lbs"}`} resultLabel="Your Ideal Weight" />
+          <AffiliateBridge 
+            result={`${result} ${units === "metric" ? "kg" : "lbs"}`} 
+            resultLabel="Your Ideal Weight"
+            description="Your ideal weight is a target range based on your height and body structure. This estimate gives you a measurable goal to work toward, but remember: the number on the scale is just one metric. Pair this target with strength training, proper nutrition, and consistent habits for true transformation."
+          />
           <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
