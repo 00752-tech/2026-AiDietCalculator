@@ -12,8 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
-import { SilentDelay } from "@/components/tools/silent-delay"
-import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
+import { ProcessingState } from "@/components/tools/processing-state"
+import { useDelayedCalculation } from "@/lib/use-delayed-calculation"
 import { type Sex, idealWeightKg, inchesToCm, kgToLbs } from "@/lib/calculators"
 
 type UnitSystem = "metric" | "imperial"
@@ -22,9 +22,7 @@ export function IdealWeightCalculatorForm() {
   const [units, setUnits] = useState<UnitSystem>("imperial")
   const [sex, setSex] = useState<Sex>("female")
   const [height, setHeight] = useState("")
-  const [result, setResult] = useState<number | null>(null)
-  const [showResults, setShowResults] = useState(false)
-  const isAnalyzing = useDiagnosticDelay(showResults && result === null)
+  const { status, result, run, reset } = useDelayedCalculation<number>()
 
   function handleUnitToggle(newUnits: UnitSystem) {
     if (!height) {
@@ -43,17 +41,16 @@ export function IdealWeightCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!height) return
-    setShowResults(true)
-    setTimeout(() => {
+    run(() => {
       const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
       const weightKg = idealWeightKg(sex, heightCm)
-      setResult(units === "metric" ? weightKg : kgToLbs(weightKg))
-    }, 3000)
+      return units === "metric" ? weightKg : kgToLbs(weightKg)
+    })
   }
 
   return (
     <div className="rounded-2xl border border-[#0F1B2A]/10 bg-white p-6 shadow-sm md:p-8">
-      {result === null ? (
+      {status === "idle" ? (
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="flex gap-2 border-b border-[#0F1B2A]/10 pb-4">
             <button
@@ -97,20 +94,20 @@ export function IdealWeightCalculatorForm() {
             Calculate Ideal Weight
           </Button>
         </form>
-      ) : isAnalyzing ? (
-        <SilentDelay />
-      ) : result !== null ? (
-        <div className="animate-in fade-in duration-700 space-y-6 text-center">
+      ) : status === "processing" ? (
+        <ProcessingState />
+      ) : status === "done" && result !== null ? (
+        <div className="animate-in fade-in duration-500 space-y-6 text-center">
           <div>
-            <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result} {units === "metric" ? "kg" : "lbs"}</p>
+            <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result.toFixed(2)} {units === "metric" ? "kg" : "lbs"}</p>
             <p className="mt-3 text-base leading-relaxed text-[#0F1B2A]/60">estimated ideal weight (Devine formula)</p>
           </div>
           <AffiliateBridge 
-            result={`${result} ${units === "metric" ? "kg" : "lbs"}`} 
+            result={`${result.toFixed(2)} ${units === "metric" ? "kg" : "lbs"}`} 
             resultLabel="Your Ideal Weight"
             description="Your ideal weight is a target range based on your height and body structure. This estimate gives you a measurable goal to work toward, but remember: the number on the scale is just one metric. Pair this target with strength training, proper nutrition, and consistent habits for true transformation."
           />
-          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => reset()} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>
