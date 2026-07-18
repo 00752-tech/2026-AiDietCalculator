@@ -38,6 +38,8 @@
   --input: #e5e7eb;
   --ring: #0e7c7b;
   --destructive: #d64545;
+  --popover: #ffffff;
+  --popover-foreground: #0f1b2a;
 }
 
 @layer base {
