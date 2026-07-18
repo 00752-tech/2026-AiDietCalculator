@@ -12,6 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
+import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import { type Sex, idealWeightKg, inchesToCm, kgToLbs } from "@/lib/calculators"
 
 type UnitSystem = "metric" | "imperial"
@@ -21,6 +23,8 @@ export function IdealWeightCalculatorForm() {
   const [sex, setSex] = useState<Sex>("female")
   const [height, setHeight] = useState("")
   const [result, setResult] = useState<number | null>(null)
+  const [showResults, setShowResults] = useState(false)
+  const isAnalyzing = useDiagnosticDelay(showResults && result === null)
 
   function handleUnitToggle(newUnits: UnitSystem) {
     if (!height) {
@@ -39,9 +43,12 @@ export function IdealWeightCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!height) return
-    const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
-    const weightKg = idealWeightKg(sex, heightCm)
-    setResult(units === "metric" ? weightKg : kgToLbs(weightKg))
+    setShowResults(true)
+    setTimeout(() => {
+      const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
+      const weightKg = idealWeightKg(sex, heightCm)
+      setResult(units === "metric" ? weightKg : kgToLbs(weightKg))
+    }, 1500)
   }
 
   return (
@@ -90,18 +97,20 @@ export function IdealWeightCalculatorForm() {
             Calculate Ideal Weight
           </Button>
         </form>
-      ) : (
+      ) : isAnalyzing ? (
+        <AnalyzingState />
+      ) : result !== null ? (
         <div className="space-y-6 text-center">
           <div>
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result} {units === "metric" ? "kg" : "lbs"}</p>
             <p className="mt-3 text-base leading-relaxed text-[#0F1B2A]/60">estimated ideal weight (Devine formula)</p>
           </div>
           <AffiliateBridge result={`${result} ${units === "metric" ? "kg" : "lbs"}`} />
-          <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>
-      )}
+      ) : null}
     </div>
   )
 }

@@ -12,6 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
+import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import { type Goal, proteinTarget, lbsToKg } from "@/lib/calculators"
 
 type UnitSystem = "metric" | "imperial"
@@ -21,6 +23,8 @@ export function ProteinCalculatorForm() {
   const [weight, setWeight] = useState("")
   const [goal, setGoal] = useState<Goal>("lose")
   const [result, setResult] = useState<number | null>(null)
+  const [showResults, setShowResults] = useState(false)
+  const isAnalyzing = useDiagnosticDelay(showResults && result === null)
 
   function handleUnitToggle(newUnits: UnitSystem) {
     if (!weight) {
@@ -39,8 +43,11 @@ export function ProteinCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!weight) return
-    const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
-    setResult(proteinTarget(weightKg, goal))
+    setShowResults(true)
+    setTimeout(() => {
+      const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
+      setResult(proteinTarget(weightKg, goal))
+    }, 1500)
   }
 
   return (
@@ -90,18 +97,20 @@ export function ProteinCalculatorForm() {
             Calculate Protein Target
           </Button>
         </form>
-      ) : (
+      ) : isAnalyzing ? (
+        <AnalyzingState />
+      ) : result !== null ? (
         <div className="space-y-6 text-center">
           <div>
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result}g</p>
             <p className="mt-3 text-lg text-[#0F1B2A]/60">recommended protein per day</p>
           </div>
           <AffiliateBridge result={`${result}g`} />
-          <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>
-      )}
+      ) : null}
     </div>
   )
 }

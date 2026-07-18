@@ -12,6 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
+import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import {
   type Sex,
   type Activity,
@@ -37,6 +39,8 @@ export function MacroCalculatorForm() {
   const [activity, setActivity] = useState<Activity>("light")
   const [goal, setGoal] = useState<Goal>("lose")
   const [result, setResult] = useState<MacroSplit | null>(null)
+  const [showResults, setShowResults] = useState(false)
+  const isAnalyzing = useDiagnosticDelay(showResults && result === null)
 
   const canSubmit = age && height && weight
 
@@ -59,11 +63,14 @@ export function MacroCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!canSubmit) return
-    const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
-    const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
-    const bmrValue = calcBmr(sex, weightKg, heightCm, Number(age))
-    const target = calorieTarget(calcTdee(bmrValue, activity), goal)
-    setResult(macroSplit(target, weightKg, goal))
+    setShowResults(true)
+    setTimeout(() => {
+      const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
+      const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
+      const bmrValue = calcBmr(sex, weightKg, heightCm, Number(age))
+      const target = calorieTarget(calcTdee(bmrValue, activity), goal)
+      setResult(macroSplit(target, weightKg, goal))
+    }, 1500)
   }
 
   return (
@@ -163,11 +170,13 @@ export function MacroCalculatorForm() {
             </div>
           </div>
           <AffiliateBridge result={`${result.proteinG}P / ${result.carbG}C / ${result.fatG}F`} />
-          <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>
-      )}
+      ) : isAnalyzing ? (
+        <AnalyzingState />
+      ) : null}
     </div>
   )
 }

@@ -12,6 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
+import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import {
   type Sex,
   type Activity,
@@ -35,6 +37,8 @@ export function CalorieCalculatorForm() {
   const [activity, setActivity] = useState<Activity>("light")
   const [goal, setGoal] = useState<Goal>("lose")
   const [result, setResult] = useState<{ tdee: number; target: number } | null>(null)
+  const [showResults, setShowResults] = useState(false)
+  const isAnalyzing = useDiagnosticDelay(showResults && !result)
 
   const canSubmit = age && height && weight
 
@@ -57,11 +61,14 @@ export function CalorieCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!canSubmit) return
-    const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
-    const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
-    const bmrValue = calcBmr(sex, weightKg, heightCm, Number(age))
-    const tdeeValue = calcTdee(bmrValue, activity)
-    setResult({ tdee: tdeeValue, target: calorieTarget(tdeeValue, goal) })
+    setShowResults(true)
+    setTimeout(() => {
+      const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
+      const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
+      const bmrValue = calcBmr(sex, weightKg, heightCm, Number(age))
+      const tdeeValue = calcTdee(bmrValue, activity)
+      setResult({ tdee: tdeeValue, target: calorieTarget(tdeeValue, goal) })
+    }, 1500)
   }
 
   return (
@@ -144,7 +151,9 @@ export function CalorieCalculatorForm() {
             Calculate Calories
           </Button>
         </form>
-      ) : (
+      ) : isAnalyzing ? (
+        <AnalyzingState />
+      ) : result ? (
         <div className="space-y-6 text-center">
           <div className="rounded-xl bg-[#0F1B2A] p-6 font-mono text-white">
             <div className="flex items-baseline justify-between border-b border-white/10 py-3">
@@ -157,11 +166,11 @@ export function CalorieCalculatorForm() {
             </div>
           </div>
           <AffiliateBridge result={`${result.target} kcal/day`} />
-          <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>
-      )}
+      ) : null}
     </div>
   )
 }

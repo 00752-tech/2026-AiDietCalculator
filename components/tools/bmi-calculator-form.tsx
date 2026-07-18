@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { AffiliateBridge } from "@/components/landing/affiliate-bridge"
+import { AnalyzingState } from "@/components/tools/analyzing-state"
+import { useDiagnosticDelay } from "@/lib/use-diagnostic-delay"
 import { bmi, bmiCategory, inchesToCm, lbsToKg } from "@/lib/calculators"
 
 type UnitSystem = "metric" | "imperial"
@@ -14,6 +16,8 @@ export function BmiCalculatorForm() {
   const [height, setHeight] = useState("")
   const [weight, setWeight] = useState("")
   const [result, setResult] = useState<{ value: number; label: string; color: string } | null>(null)
+  const [showResults, setShowResults] = useState(false)
+  const isAnalyzing = useDiagnosticDelay(showResults && !result)
 
   function handleUnitToggle(newUnits: UnitSystem) {
     if (!height || !weight) {
@@ -34,10 +38,13 @@ export function BmiCalculatorForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!height || !weight) return
-    const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
-    const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
-    const value = bmi(weightKg, heightCm)
-    setResult({ value, ...bmiCategory(value) })
+    setShowResults(true)
+    setTimeout(() => {
+      const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
+      const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
+      const value = bmi(weightKg, heightCm)
+      setResult({ value, ...bmiCategory(value) })
+    }, 1500)
   }
 
   return (
@@ -82,7 +89,9 @@ export function BmiCalculatorForm() {
             Calculate BMI
           </Button>
         </form>
-      ) : (
+      ) : isAnalyzing ? (
+        <AnalyzingState />
+      ) : result ? (
         <div className="space-y-6 text-center">
           <div>
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result.value}</p>
@@ -96,11 +105,11 @@ export function BmiCalculatorForm() {
           <AffiliateBridge
             result={result.value}
           />
-          <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
+          <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
         </div>
-      )}
+      ) : null}
     </div>
   )
 }
