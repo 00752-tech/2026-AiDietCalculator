@@ -69,7 +69,9 @@ export default function NotFound() {
             size="lg"
             className="mb-4 w-full rounded-full bg-[#0E7C7B] py-6 text-base font-medium text-white hover:bg-[#0E7C7B]/90"
           >
-            <Link href="/">Return to Diagnostic Suite</Link>
+            <a href="/recommend/catalyst" rel="sponsored noopener" target="_blank" className="inline-block">
+              Return to Diagnostic Suite
+            </a>
           </Button>
 
           {/* Clinical footer note */}

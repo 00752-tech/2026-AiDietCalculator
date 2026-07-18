@@ -10,7 +10,7 @@ const nextConfig = {
     return [
       {
         source: '/recommend/catalyst',
-        destination: 'https://2d52bx1-e7dsfx08pm6q66yqyz.hop.clickbank.net/?&traffic_source=aidietcalc',
+        destination: 'https://e1b52tfuj27vdm9fn420llp3ar.hop.clickbank.net/?&traffic_source=aidietcalc',
         permanent: false,
       },
     ]
