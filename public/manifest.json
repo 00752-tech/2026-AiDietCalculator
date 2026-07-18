@@ -1,0 +1,42 @@
+{
+  "name": "AI Diet Calculator",
+  "short_name": "Diet Calc",
+  "description": "Free nutrition and metabolism calculators using proven formulas.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0E7C7B",
+  "background_color": "#F7F9FA",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
