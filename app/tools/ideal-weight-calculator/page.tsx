@@ -3,9 +3,9 @@ import { ToolShell } from "@/components/tools/tool-shell"
 import { IdealWeightCalculatorForm } from "@/components/tools/ideal-weight-calculator-form"
 
 export const metadata: Metadata = {
-  title: "Ideal Weight Calculator — Devine Formula",
+  title: "Ideal Weight Calculator: AI-Driven Health Insights",
   description:
-    "Calculate your ideal weight based on height and sex using the Devine formula. Get personalized weight targets for your fitness journey.",
+    "Calculate your ideal weight range with our AI-driven tool. Get health-focused metrics based on your height and sex.",
 }
 
 export default function IdealWeightCalculatorPage() {

@@ -20,9 +20,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'AI Diet Calculator — Free & Instant Results',
+  title: 'AI Diet Planner & Metabolic Diagnostic Tool',
   description:
-    'Calculate your daily calorie needs, BMI, protein intake, and macros instantly. AI-powered nutrition planning for weight loss, maintenance, and muscle gain.',
+    'Get personalized AI-driven diet plans and metabolic insights. Stop guessing your nutritional needs and start achieving your health goals today.',
   generator: 'v0.app',
   manifest: '/manifest.json',
   openGraph: {
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://aidietcalculator.com',
     siteName: 'AI Diet Calculator',
-    title: 'AI Diet Calculator — Free & Instant Results',
-    description: 'Free nutrition calculators using standard formulas. Calculate BMI, TDEE, protein intake, and macros instantly.',
+    title: 'AI Diet Planner & Metabolic Diagnostic Tool',
+    description: 'Get personalized AI-driven diet plans and metabolic insights. Stop guessing your nutritional needs and start achieving your health goals today.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Diet Calculator — Free & Instant Results',
-    description: 'Free nutrition calculators using standard formulas. Calculate BMI, TDEE, protein intake, and macros instantly.',
+    title: 'AI Diet Planner & Metabolic Diagnostic Tool',
+    description: 'Get personalized AI-driven diet plans and metabolic insights. Stop guessing your nutritional needs and start achieving your health goals today.',
   },
   icons: {
     icon: [

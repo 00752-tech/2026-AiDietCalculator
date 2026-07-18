@@ -3,9 +3,9 @@ import { ToolShell } from "@/components/tools/tool-shell"
 import { MacroCalculatorForm } from "@/components/tools/macro-calculator-form"
 
 export const metadata: Metadata = {
-  title: "Macro Calculator — Protein, Fat & Carbs Split",
+  title: "Macro Calculator: AI Nutrition & Fitness Planner",
   description:
-    "Calculate your macronutrient split (protein, fat, carbs) for your daily calorie goal. Get personalized macros for weight loss, maintenance, or muscle building.",
+    "Split your calories into protein, fat, and carbs with our AI macro calculator. Get custom nutritional targets to support your fitness journey.",
 }
 
 export default function MacroCalculatorPage() {

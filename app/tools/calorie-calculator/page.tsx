@@ -3,9 +3,9 @@ import { ToolShell } from "@/components/tools/tool-shell"
 import { CalorieCalculatorForm } from "@/components/tools/calorie-calculator-form"
 
 export const metadata: Metadata = {
-  title: "Calorie Calculator — Daily Intake Estimator",
+  title: "Calorie Calculator: AI Daily Intake Planner",
   description:
-    "Calculate your daily calorie needs based on age, weight, height, and activity level. Instant TDEE and calorie goals for weight loss, maintenance, or muscle gain.",
+    "Find your daily calorie needs with our AI calculator. Get precise, personalized targets for weight loss or maintenance based on your body metrics.",
 }
 
 export default function CalorieCalculatorPage() {

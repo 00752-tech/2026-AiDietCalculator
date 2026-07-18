@@ -3,9 +3,9 @@ import { ToolShell } from "@/components/tools/tool-shell"
 import { ProteinCalculatorForm } from "@/components/tools/protein-calculator-form"
 
 export const metadata: Metadata = {
-  title: "Protein Calculator — Daily Intake Guide",
+  title: "Protein Calculator: AI Macro Tracker",
   description:
-    "Calculate your daily protein needs based on your weight and fitness goal. Get personalized recommendations for weight loss, maintenance, or muscle gain.",
+    "Optimize your protein intake with our AI-powered calculator. Get precise daily targets to build muscle and achieve your fitness goals.",
 }
 
 export default function ProteinCalculatorPage() {

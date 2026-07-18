@@ -3,9 +3,9 @@ import { ToolShell } from "@/components/tools/tool-shell"
 import { BmrCalculatorForm } from "@/components/tools/bmr-calculator-form"
 
 export const metadata: Metadata = {
-  title: "BMR Calculator — Basal Metabolic Rate",
+  title: "BMR Calculator: AI Metabolic Rate Estimator",
   description:
-    "Calculate your basal metabolic rate using the Mifflin-St Jeor formula. Find your BMR and daily calorie needs for your fitness goal.",
+    "Discover your Basal Metabolic Rate (BMR) with our AI calculator. Understand your body energy needs to lose weight or build muscle effectively.",
 }
 
 export default function BmrCalculatorPage() {
