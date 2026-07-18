@@ -53,6 +53,7 @@ export const metadata: Metadata = {
   other: {
     'msapplication-TileColor': '#0E7C7B',
     'msapplication-config': '/browserconfig.xml',
+    'google-site-verification': 'RhY8MQoncEED33YHQnoIBVvxJLYtINYFouF8Bcq3Q84',
   },
 }
 
