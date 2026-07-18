@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://aidietcalculator.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://aidietcalculator.com/tools/bmi-calculator</loc><priority>0.8</priority></url>
+  <url><loc>https://aidietcalculator.com/tools/protein-calculator</loc><priority>0.8</priority></url>
+  <url><loc>https://aidietcalculator.com/tools/bmr-calculator</loc><priority>0.8</priority></url>
+  <url><loc>https://aidietcalculator.com/tools/calorie-calculator</loc><priority>0.8</priority></url>
+  <url><loc>https://aidietcalculator.com/tools/macro-calculator</loc><priority>0.8</priority></url>
+  <url><loc>https://aidietcalculator.com/tools/ideal-weight-calculator</loc><priority>0.8</priority></url>
+</urlset>

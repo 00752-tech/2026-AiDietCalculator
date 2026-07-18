@@ -1,4 +1,8 @@
 {
   "buildCommand": "next build",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "env": {
+    "SKIP_BUILD_SOURCEMAP": "true"
+  },
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- '*.md' '*.txt' '.v0'"
 }

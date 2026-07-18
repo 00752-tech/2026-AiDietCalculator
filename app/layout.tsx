@@ -82,17 +82,17 @@ export default function RootLayout({
 }>) {
   const schemaData = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    'name': 'AI Diet Calculator',
-    'description': 'Free nutrition and metabolism calculators using standard formulas (Mifflin-St Jeor, Devine). Calculate BMI, calorie needs, protein intake, and macros instantly.',
-    'url': 'https://aidietcalculator.com',
+    '@type': 'WebApplication',
+    'name': 'Nutri-Calc Metabolic Diagnostic',
+    'url': 'https://aidietcalculator.com/',
+    'description': 'Professional metabolic diagnostic tool for calculating BMR and BMI metrics.',
     'applicationCategory': 'HealthApplication',
+    'operatingSystem': 'All',
     'offers': {
       '@type': 'Offer',
       'price': '0',
       'priceCurrency': 'USD',
     },
-    'featureList': ['BMI Calculator', 'Calorie Calculator', 'Protein Calculator', 'Macro Calculator', 'BMR Calculator', 'Ideal Weight Calculator', 'Metabolic Diagnostic Tool'],
   }
 
   return (
