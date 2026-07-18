@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 
-// Live CitrusBurn hoplink. This is the hoplink (tracked), not a direct order-form
-// link — keep it that way, direct-linking to the cart violates the affiliate terms.
-const AFFILIATE_URL = "https://2d52bx1-e7dsfx08pm6q66yqyz.hop.clickbank.net/?&traffic_source=aidietcalc"
+// Branded redirect to CitrusBurn hoplink. Routes through /recommend/catalyst for better
+// tracking and user trust. The redirect is configured in next.config.mjs with permanent: false
+const AFFILIATE_URL = "/recommend/catalyst"
 
 interface AffiliateBridgeProps {
   /** Optional per-page override so each calculator can bridge with a relevant line. */
