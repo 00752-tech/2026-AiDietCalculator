@@ -19,7 +19,7 @@ import { type Sex, bmr as calcBmr, inchesToCm, lbsToKg } from "@/lib/calculators
 type UnitSystem = "metric" | "imperial"
 
 export function BmrCalculatorForm() {
-  const [units, setUnits] = useState<UnitSystem>("metric")
+  const [units, setUnits] = useState<UnitSystem>("imperial")
   const [sex, setSex] = useState<Sex>("female")
   const [age, setAge] = useState("")
   const [height, setHeight] = useState("")
@@ -54,7 +54,7 @@ export function BmrCalculatorForm() {
       const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
       const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
       setResult(calcBmr(sex, weightKg, heightCm, Number(age)))
-    }, 1500)
+    }, 3000)
   }
 
   return (

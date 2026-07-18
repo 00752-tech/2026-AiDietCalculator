@@ -12,7 +12,7 @@ import { bmi, bmiCategory, inchesToCm, lbsToKg } from "@/lib/calculators"
 type UnitSystem = "metric" | "imperial"
 
 export function BmiCalculatorForm() {
-  const [units, setUnits] = useState<UnitSystem>("metric")
+  const [units, setUnits] = useState<UnitSystem>("imperial")
   const [height, setHeight] = useState("")
   const [weight, setWeight] = useState("")
   const [result, setResult] = useState<{ value: number; label: string; color: string } | null>(null)
@@ -44,7 +44,7 @@ export function BmiCalculatorForm() {
       const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
       const value = bmi(weightKg, heightCm)
       setResult({ value, ...bmiCategory(value) })
-    }, 1500)
+    }, 3000)
   }
 
   return (

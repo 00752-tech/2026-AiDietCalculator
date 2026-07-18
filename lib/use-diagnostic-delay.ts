@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-export function useDiagnosticDelay(shouldDelay: boolean, delayMs: number = 1500) {
+export function useDiagnosticDelay(shouldDelay: boolean, delayMs: number = 3000) {
   const [isAnalyzing, setIsAnalyzing] = useState(false)
 
   useEffect(() => {

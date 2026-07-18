@@ -29,7 +29,7 @@ import {
 type UnitSystem = "metric" | "imperial"
 
 export function CalorieCalculatorForm() {
-  const [units, setUnits] = useState<UnitSystem>("metric")
+  const [units, setUnits] = useState<UnitSystem>("imperial")
   const [sex, setSex] = useState<Sex>("female")
   const [age, setAge] = useState("")
   const [height, setHeight] = useState("")
@@ -68,7 +68,7 @@ export function CalorieCalculatorForm() {
       const bmrValue = calcBmr(sex, weightKg, heightCm, Number(age))
       const tdeeValue = calcTdee(bmrValue, activity)
       setResult({ tdee: tdeeValue, target: calorieTarget(tdeeValue, goal) })
-    }, 1500)
+    }, 3000)
   }
 
   return (

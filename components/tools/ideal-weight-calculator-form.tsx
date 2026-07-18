@@ -19,7 +19,7 @@ import { type Sex, idealWeightKg, inchesToCm, kgToLbs } from "@/lib/calculators"
 type UnitSystem = "metric" | "imperial"
 
 export function IdealWeightCalculatorForm() {
-  const [units, setUnits] = useState<UnitSystem>("metric")
+  const [units, setUnits] = useState<UnitSystem>("imperial")
   const [sex, setSex] = useState<Sex>("female")
   const [height, setHeight] = useState("")
   const [result, setResult] = useState<number | null>(null)
@@ -48,7 +48,7 @@ export function IdealWeightCalculatorForm() {
       const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
       const weightKg = idealWeightKg(sex, heightCm)
       setResult(units === "metric" ? weightKg : kgToLbs(weightKg))
-    }, 1500)
+    }, 3000)
   }
 
   return (

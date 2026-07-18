@@ -31,7 +31,7 @@ import {
 type UnitSystem = "metric" | "imperial"
 
 export function MacroCalculatorForm() {
-  const [units, setUnits] = useState<UnitSystem>("metric")
+  const [units, setUnits] = useState<UnitSystem>("imperial")
   const [sex, setSex] = useState<Sex>("female")
   const [age, setAge] = useState("")
   const [height, setHeight] = useState("")
@@ -70,7 +70,7 @@ export function MacroCalculatorForm() {
       const bmrValue = calcBmr(sex, weightKg, heightCm, Number(age))
       const target = calorieTarget(calcTdee(bmrValue, activity), goal)
       setResult(macroSplit(target, weightKg, goal))
-    }, 1500)
+    }, 3000)
   }
 
   return (
@@ -153,7 +153,9 @@ export function MacroCalculatorForm() {
             Calculate Macros
           </Button>
         </form>
-      ) : (
+      ) : isAnalyzing ? (
+        <AnalyzingState />
+      ) : result ? (
         <div className="space-y-6 text-center">
           <div className="grid grid-cols-3 gap-3 rounded-xl bg-[#0F1B2A] p-6 font-mono text-white">
             <div>
@@ -174,8 +176,6 @@ export function MacroCalculatorForm() {
             Recalculate
           </button>
         </div>
-      ) : isAnalyzing ? (
-        <AnalyzingState />
       ) : null}
     </div>
   )

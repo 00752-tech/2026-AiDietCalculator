@@ -19,7 +19,7 @@ import { type Goal, proteinTarget, lbsToKg } from "@/lib/calculators"
 type UnitSystem = "metric" | "imperial"
 
 export function ProteinCalculatorForm() {
-  const [units, setUnits] = useState<UnitSystem>("metric")
+  const [units, setUnits] = useState<UnitSystem>("imperial")
   const [weight, setWeight] = useState("")
   const [goal, setGoal] = useState<Goal>("lose")
   const [result, setResult] = useState<number | null>(null)
@@ -47,7 +47,7 @@ export function ProteinCalculatorForm() {
     setTimeout(() => {
       const weightKg = units === "metric" ? Number(weight) : lbsToKg(Number(weight))
       setResult(proteinTarget(weightKg, goal))
-    }, 1500)
+    }, 3000)
   }
 
   return (
