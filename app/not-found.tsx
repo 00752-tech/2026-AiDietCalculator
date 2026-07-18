@@ -4,16 +4,14 @@ import { Button } from "@/components/ui/button"
 export default function NotFound() {
   return (
     <div
-      className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat"
+      className="fixed inset-0 min-h-screen w-full bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/404-diagnostic-console.png')",
+        backgroundImage: "url('/404-diagnostic-dashboard.png')",
+        backgroundAttachment: "fixed",
       }}
     >
-      {/* Dark overlay for text legibility */}
-      <div className="absolute inset-0 bg-black/65" />
-
-      {/* Centered content container with breathing animation */}
-      <div className="relative flex min-h-screen items-center justify-center px-4 py-8">
+      {/* Centered glassmorphism container */}
+      <div className="flex min-h-screen items-center justify-center px-4 py-8">
         <style>{`
           @keyframes breathe {
             0%, 100% {
@@ -21,62 +19,62 @@ export default function NotFound() {
               transform: scale(1);
             }
             50% {
-              opacity: 0.95;
+              opacity: 0.97;
               transform: scale(1.01);
             }
           }
           .breathe-animate {
-            animation: breathe 3s ease-in-out infinite;
+            animation: breathe 3.5s ease-in-out infinite;
           }
         `}</style>
 
-        {/* Premium diagnostic card */}
-        <div className="breathe-animate w-full max-w-2xl rounded-2xl border border-[#0E7C7B]/30 bg-white/95 p-8 shadow-2xl backdrop-blur-sm md:p-12">
+        {/* Glassmorphism frosted glass panel */}
+        <div className="breathe-animate w-full max-w-2xl rounded-2xl border border-white/10 bg-black/40 p-8 shadow-2xl backdrop-blur-md md:p-12">
           {/* System status indicator */}
           <div className="mb-6 flex items-center justify-center gap-2">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
-            <p className="font-mono text-sm uppercase tracking-wider text-red-500">
-              System Diagnostic Alert
+            <div className="h-2 w-2 animate-pulse rounded-full bg-[#4FD1D0]" />
+            <p className="font-mono text-sm uppercase tracking-wider text-[#4FD1D0]">
+              System Diagnostic Fault
             </p>
-            <div className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
+            <div className="h-2 w-2 animate-pulse rounded-full bg-[#4FD1D0]" />
           </div>
 
           {/* Headline */}
-          <h1 className="mb-4 text-center font-serif text-3xl font-light tracking-tight text-[#0F1B2A] md:text-4xl">
-            System Diagnostic: Pathway Not Found
+          <h1 className="mb-6 text-center font-mono text-3xl font-bold tracking-tight text-white md:text-4xl">
+            404 — SYSTEM DIAGNOSTIC FAULT
           </h1>
 
           {/* Error code display */}
-          <div className="mb-6 flex justify-center gap-4">
-            <span className="font-mono text-sm text-[#0E7C7B]">ERROR_404</span>
-            <span className="font-mono text-sm text-[#0F1B2A]/40">|</span>
-            <span className="font-mono text-sm text-[#0E7C7B]">SIGNAL_LOST</span>
+          <div className="mb-6 flex justify-center gap-4 font-mono text-sm">
+            <span className="text-[#4FD1D0]">PATHWAY_OFFLINE</span>
+            <span className="text-white/30">|</span>
+            <span className="text-[#FF6B6B]">CRITICAL_FAULT</span>
           </div>
 
           {/* Body description */}
-          <p className="mb-8 text-center text-base leading-relaxed text-[#0F1B2A]/70">
-            The metabolic data path you requested could not be calculated. This signal has been lost.
+          <p className="mb-8 text-center text-base leading-relaxed text-white/80">
+            The metabolic pathway you are attempting to access is currently offline or corrupted.
           </p>
 
           {/* Visual separator */}
           <div className="mb-8 flex items-center gap-4">
-            <div className="flex-1 border-t border-[#0F1B2A]/10" />
-            <div className="h-1 w-1 rounded-full bg-[#0E7C7B]" />
-            <div className="flex-1 border-t border-[#0F1B2A]/10" />
+            <div className="flex-1 border-t border-white/10" />
+            <div className="h-1.5 w-1.5 rounded-full bg-[#4FD1D0]" />
+            <div className="flex-1 border-t border-white/10" />
           </div>
 
-          {/* CTA Button */}
+          {/* Override button */}
           <Button
             asChild
             size="lg"
-            className="mb-4 w-full rounded-full bg-[#0E7C7B] py-6 text-base font-medium text-white hover:bg-[#0E7C7B]/90"
+            className="mb-4 w-full rounded-full border-2 border-[#4FD1D0] bg-[#0E7C7B] py-6 text-base font-semibold text-white transition-all hover:bg-[#4FD1D0] hover:text-[#0F1B2A]"
           >
-            <Link href="/">Return to Diagnostic Suite</Link>
+            <Link href="/">System Override — Return to Home</Link>
           </Button>
 
-          {/* Secondary info */}
-          <p className="text-center text-xs text-[#0F1B2A]/50">
-            All diagnostic pathways available on the main suite. No data was lost in this error.
+          {/* Status info */}
+          <p className="text-center text-xs text-white/50">
+            Initiating diagnostic reset. All pathways will be restored.
           </p>
         </div>
       </div>
