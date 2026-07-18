@@ -80,19 +80,44 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const schemaData = {
+  const webApplicationSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     'name': 'Nutri-Calc Metabolic Diagnostic',
     'url': 'https://aidietcalculator.com/',
-    'description': 'Professional metabolic diagnostic tool for calculating BMR and BMI metrics.',
+    'description': 'Professional metabolic diagnostic tool for calculating BMR, BMI, and nutritional requirements.',
     'applicationCategory': 'HealthApplication',
     'operatingSystem': 'All',
+    'browserRequirements': 'Requires JavaScript',
     'offers': {
       '@type': 'Offer',
       'price': '0',
       'priceCurrency': 'USD',
     },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'AiDietCalculator',
+      'url': 'https://aidietcalculator.com',
+    },
+  }
+
+  const medicalWebPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    'name': 'AI Diet & Metabolic Health Diagnostic',
+    'url': 'https://aidietcalculator.com/',
+    'description': 'Evidence-based metabolic diagnostic tools for calculating BMR, BMI, and nutritional requirements for personalized health management.',
+    'mainEntity': {
+      '@type': 'MedicalCondition',
+      'name': 'Metabolic Health',
+      'alternateName': 'Metabolism and Nutrition',
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'AiDietCalculator',
+      'url': 'https://aidietcalculator.com',
+    },
+    'inLanguage': 'en-US',
   }
 
   return (
@@ -103,7 +128,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalWebPageSchema) }}
         />
       </head>
       <body className="font-sans antialiased">
