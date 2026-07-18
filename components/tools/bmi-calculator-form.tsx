@@ -104,6 +104,7 @@ export function BmiCalculatorForm() {
           </p>
           <AffiliateBridge
             result={result.value}
+            resultLabel="Your BMI Reading"
           />
           <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate

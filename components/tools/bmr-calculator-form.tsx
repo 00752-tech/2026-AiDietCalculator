@@ -123,7 +123,7 @@ export function BmrCalculatorForm() {
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result}</p>
             <p className="mt-3 text-base leading-relaxed text-[#0F1B2A]/60">kcal/day at complete rest (Mifflin-St Jeor)</p>
           </div>
-          <AffiliateBridge result={`${result} kcal/day`} />
+          <AffiliateBridge result={`${result} kcal/day`} resultLabel="Your Metabolic Baseline" />
           <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>

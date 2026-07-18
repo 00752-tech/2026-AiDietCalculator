@@ -9,14 +9,17 @@ interface AffiliateBridgeProps {
   headline?: string
   body?: string
   result?: string | number
+  /** Context-aware label for the result (e.g., "Your Daily Protein Target", "Your Metabolic Baseline") */
+  resultLabel?: string
 }
 
 export function AffiliateBridge({
   headline,
   body = "This number represents your body's current resting output. The data confirms you are capable of weight loss, but \"capability\" isn't \"efficiency.\" Most failures at this stage happen because the body hits a metabolic plateau—it defends its current weight rather than burning it. To solve for this, we have to introduce a catalyst that shifts your metabolism from \"defensive mode\" into \"optimization mode.\"",
   result,
+  resultLabel = "Your Metabolic Baseline",
 }: AffiliateBridgeProps) {
-  const defaultHeadline = headline || (result ? `Your Metabolic Baseline is ${result}.` : "Your numbers are only half the equation.")
+  const defaultHeadline = headline || (result ? `${resultLabel} is ${result}.` : "Your numbers are only half the equation.")
   
   return (
     <div className="rounded-xl border-2 border-[#D64545]/20 bg-[#D64545]/[0.04] p-6 text-center">

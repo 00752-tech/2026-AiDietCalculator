@@ -37,7 +37,7 @@ interface Result {
 }
 
 export function DiagnosticTool() {
-  const [units, setUnits] = useState<UnitSystem>("metric")
+  const [units, setUnits] = useState<UnitSystem>("imperial")
   const [sex, setSex] = useState<Sex>("male")
   const [age, setAge] = useState("")
   const [height, setHeight] = useState("")

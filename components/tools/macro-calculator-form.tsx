@@ -171,7 +171,7 @@ export function MacroCalculatorForm() {
               <p className="mt-2 text-sm uppercase tracking-wide text-white/50">Fat</p>
             </div>
           </div>
-          <AffiliateBridge result={`${result.proteinG}P / ${result.carbG}C / ${result.fatG}F`} />
+          <AffiliateBridge result={`${result.proteinG}P / ${result.carbG}C / ${result.fatG}F`} resultLabel="Your Macro Split" />
           <button onClick={() => { setResult(null); setShowResults(false) }} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
