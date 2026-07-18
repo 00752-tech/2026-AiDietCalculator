@@ -156,7 +156,7 @@ export function CalorieCalculatorForm() {
               <span className="text-2xl text-[#4FD1D0]">{result.target} kcal/day</span>
             </div>
           </div>
-          <AffiliateBridge />
+          <AffiliateBridge result={`${result.target} kcal/day`} />
           <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>

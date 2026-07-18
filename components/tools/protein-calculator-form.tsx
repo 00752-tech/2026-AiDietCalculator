@@ -96,7 +96,7 @@ export function ProteinCalculatorForm() {
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result}g</p>
             <p className="mt-3 text-lg text-[#0F1B2A]/60">recommended protein per day</p>
           </div>
-          <AffiliateBridge />
+          <AffiliateBridge result={`${result}g`} />
           <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
