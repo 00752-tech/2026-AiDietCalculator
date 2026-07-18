@@ -46,7 +46,7 @@ export default function NotFound() {
 
           {/* Diagnostic reference codes */}
           <div className="mb-6 flex justify-center gap-4 font-mono text-xs">
-            <span className="text-white/50">REF: 404</span>
+            <span className="font-semibold text-gray-200">REF: 404</span>
             <span className="text-white/30">|</span>
             <span className="text-amber-500/70">SIGNAL_LOST</span>
           </div>
