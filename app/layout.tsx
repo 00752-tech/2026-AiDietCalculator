@@ -25,6 +25,19 @@ export const metadata: Metadata = {
     'Calculate your daily calorie needs, BMI, protein intake, and macros instantly. AI-powered nutrition planning for weight loss, maintenance, and muscle gain.',
   generator: 'v0.app',
   manifest: '/manifest.json',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://aidietcalculator.com',
+    siteName: 'AI Diet Calculator',
+    title: 'AI Diet Calculator — Free & Instant Results',
+    description: 'Free nutrition calculators using standard formulas. Calculate BMI, TDEE, protein intake, and macros instantly.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Diet Calculator — Free & Instant Results',
+    description: 'Free nutrition calculators using standard formulas. Calculate BMI, TDEE, protein intake, and macros instantly.',
+  },
   icons: {
     icon: [
       {
@@ -67,11 +80,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    'name': 'AI Diet Calculator',
+    'description': 'Free nutrition and metabolism calculators using standard formulas (Mifflin-St Jeor, Devine). Calculate BMI, calorie needs, protein intake, and macros instantly.',
+    'url': 'https://aidietcalculator.com',
+    'applicationCategory': 'HealthApplication',
+    'offers': {
+      '@type': 'Offer',
+      'price': '0',
+      'priceCurrency': 'USD',
+    },
+    'featureList': ['BMI Calculator', 'Calorie Calculator', 'Protein Calculator', 'Macro Calculator', 'BMR Calculator', 'Ideal Weight Calculator', 'Metabolic Diagnostic Tool'],
+  }
+
   return (
     <html
       lang="en"
       className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} bg-background`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
