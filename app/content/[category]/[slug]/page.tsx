@@ -26,6 +26,21 @@ export default async function ContentPage({ params }: PageProps) {
 
   return (
     <main className="max-w-4xl mx-auto p-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": niche.slug.replace(/-/g, ' '),
+            "author": {
+              "@type": "Person",
+              "name": niche.expertRole
+            },
+            "description": `Expert analysis on ${niche.slug.replace(/-/g, ' ')} for metabolic health.`
+          }),
+        }}
+      />
       <h1 className="text-4xl font-bold mb-4 capitalize">
         {niche.slug.replace(/-/g, ' ')}
       </h1>
