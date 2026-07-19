@@ -1,9 +1,12 @@
 import type { MetadataRoute } from 'next'
+import fs from 'fs'
+import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://aidietcalculator.com'
 
-  return [
+  // 1. Core Platform Static Routes
+  const sitemapEntries: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -47,4 +50,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ]
+
+  // 2. Programmatic Ingestion Layer (Scans and appends all 700+ target macro/metabolic paths)
+  const baseDir = path.join(process.cwd(), 'content', 'niches')
+
+  if (fs.existsSync(baseDir)) {
+    const files = fs.readdirSync(baseDir)
+
+    files
+      .filter((file) => file.endsWith('.json'))
+      .forEach((file) => {
+        const slug = file.replace('.json', '')
+        const filePath = path.join(baseDir, file)
+        const stats = fs.statSync(filePath)
+
+        sitemapEntries.push({
+          url: `${baseUrl}/${slug}`,
+          lastModified: stats.mtime, // Captures exact filesystem modification timestamp
+          changeFrequency: 'weekly',
+          priority: 0.7,
+        })
+      })
+  }
+
+  return sitemapEntries
 }
