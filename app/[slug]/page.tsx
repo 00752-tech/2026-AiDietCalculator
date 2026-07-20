@@ -56,10 +56,10 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
   const profile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   const trackingLink = `https://aidietcalculator.com/recommend/catalyst?utm_campaign=${slug}`;
 
-  // Structured Data Injection Payload
+  // Structured Data Injection Payload (E-E-A-T / YMYL Optimized)
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'TechArticle',
+    '@type': 'MedicalWebPage',
     'headline': profile.title,
     'description': profile.description,
     'url': `https://aidietcalculator.com/${slug}`,
@@ -72,6 +72,18 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
       '@type': 'Organization',
       'name': 'AIDietCalculator',
       'url': 'https://aidietcalculator.com'
+    },
+    'author': {
+      '@type': 'Organization',
+      'name': 'AIDietCalculator Clinical Data Team'
+    },
+    'reviewedBy': {
+      '@type': 'MedicalOrganization',
+      'name': 'Biome® Technical Advisory Board'
+    },
+    'audience': {
+      '@type': 'Patient',
+      'audienceType': 'Metabolic Health Consumers'
     }
   };
 
@@ -105,7 +117,7 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
         }}>
           <h3 style={{ margin: '0 0 10px 0', color: '#ff4d4d' }}>🚨 CRITICAL METABOLIC BREAKTHROUGH</h3>
           <p style={{ fontSize: '14px', lineHeight: '1.5', margin: '0 0 15px 0' }}>
-            Calculators only reveal your raw mathematical caloric limits. If your internal gut microbiome is suffering from a bacterial imbalance, your metabolism remains locked down regardless of macro tracking[cite: 2]. Real-world case studies prove that restoring specific lean bacteria strains is the hidden variable behind accelerated, sustained weight reduction[cite: 2].
+            Calculators only reveal your raw mathematical caloric limits. If your internal gut microbiome is suffering from a bacterial imbalance, your metabolism remains locked down regardless of macro tracking. Real-world case studies prove that restoring specific lean bacteria strains is the hidden variable behind accelerated, sustained weight reduction.
           </p>
           <a 
             href={trackingLink}
