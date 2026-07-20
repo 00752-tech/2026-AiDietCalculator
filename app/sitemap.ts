@@ -51,26 +51,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // 2. Programmatic Ingestion Layer (Scans and appends all 700+ target macro/metabolic paths)
+  // 2. Programmatic Ingestion Layer (Niches)
   const baseDir = path.join(process.cwd(), 'content', 'niches')
-
   if (fs.existsSync(baseDir)) {
     const files = fs.readdirSync(baseDir)
-
     files
       .filter((file) => file.endsWith('.json'))
       .forEach((file) => {
         const slug = file.replace('.json', '')
         const filePath = path.join(baseDir, file)
         const stats = fs.statSync(filePath)
-
         sitemapEntries.push({
           url: `${baseUrl}/${slug}`,
-          lastModified: stats.mtime, // Captures exact filesystem modification timestamp
+          lastModified: stats.mtime,
           changeFrequency: 'weekly',
           priority: 0.7,
         })
       })
+  }
+
+  // 3. Expert Pillar Articles (Ingestion Layer for app/library)
+  const libraryDir = path.join(process.cwd(), 'app', 'library')
+  if (fs.existsSync(libraryDir)) {
+    // Scan directory for folders (each folder is an article slug)
+    const folders = fs.readdirSync(libraryDir, { withFileTypes: true })
+      .filter((dirent) => dirent.isDirectory())
+      .map((dirent) => dirent.name)
+
+    folders.forEach((slug) => {
+      sitemapEntries.push({
+        url: `${baseUrl}/library/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      })
+    })
   }
 
   return sitemapEntries
