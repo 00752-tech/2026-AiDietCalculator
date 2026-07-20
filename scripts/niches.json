@@ -1,122 +1,200 @@
 [
-  {
-    "slug": "high-protein-40-30-30-1600-calorie-macros",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "low-carb-keto-metabolic-reset-1400-calories",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "lean-mass-hypertrophy-protein-calculator-macros",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "aggressive-deficit-macro-calculator-2000-calories",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "endomorph-metabolic-type-macro-split-female",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "ectomorph-muscle-gain-macro-ratio-matrix",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "mesomorph-lean-bulking-macros-mifflin-protocol",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "intermittent-fasting-16-8-macro-split-1800-calories",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "insulin-resistance-macro-calculator-low-glycemic",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "reverse-dieting-metabolic-adaptation-macro-matrix",
-    "category": "macro-ratio-matrices"
-  },
-  {
-    "slug": "mifflin-st-jeor-bmr-calculator-slow-metabolism",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "clinical-metabolic-testing-diagnostic-profile",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "ideal-weight-calculator-bmi-over-30-reset",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "basal-metabolic-rate-inflection-point-macros",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "resting-energy-expenditure-mifflin-formula-tracking",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "total-daily-energy-expenditure-tdee-diagnostic",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "thyroid-sluggish-metabolism-bmr-calculator-math",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "age-related-metabolic-slowdown-mifflin-formula",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "visceral-fat-loss-bmr-diagnostic-protocol",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "metabolic-age-deficit-calculation-matrix",
-    "category": "metabolic-diagnostic-profiles"
-  },
-  {
-    "slug": "gut-microbiome-belly-fat-accumulation-macros",
-    "category": "microbiome-metabolism-bridges"
-  },
-  {
-    "slug": "bacterial-imbalance-unexplained-weight-gain-fix",
-    "category": "microbiome-metabolism-bridges"
-  },
-  {
-    "slug": "reverse-slow-metabolism-lean-bacteria-strains",
-    "category": "microbiome-metabolism-bridges"
-  },
-  {
-    "slug": "stop-sugar-cravings-metabolic-calculator-reset",
-    "category": "microbiome-metabolism-bridges"
-  },
-  {
-    "slug": "meghan-see-240-lbs-weight-loss-protocol",
-    "category": "microbiome-metabolism-bridges"
-  },
-  {
-    "slug": "ivy-league-weight-loss-bacteria-research-macros",
-    "category": "microbiome-metabolism-bridges"
-  },
-  {
-    "slug": "greenselect-phytosome-absorption-metabolic-speed",
-    "category": "microbiome-metabolism-bridges"
-  },
-  {
-    "slug": "garcinia-mangostana-belly-fat-reduction-matrix",
-    "category": "microbiome-metabolism-bridges"
-  },
-  {
-    "slug": "sphaeranthus-indicus-gut-microflora-weight-loss",
-    "category": "microbiome-metabolism-bridges"
-  },
-  {
-    "slug": "chronic-cortisol-belly-fat-microbiome-flora",
-    "category": "microbiome-metabolism-bridges"
-  }
-]
+  {"slug": "high-protein-40-30-30-1600-calorie-macros", "category": "macro-ratio-matrices"},
+  {"slug": "low-carb-keto-metabolic-reset-1400-calories", "category": "macro-ratio-matrices"},
+  {"slug": "lean-mass-hypertrophy-protein-calculator-macros", "category": "macro-ratio-matrices"},
+  {"slug": "aggressive-deficit-macro-calculator-2000-calories", "category": "macro-ratio-matrices"},
+  {"slug": "endomorph-metabolic-type-macro-split-female", "category": "macro-ratio-matrices"},
+  {"slug": "ectomorph-muscle-gain-macro-ratio-matrix", "category": "macro-ratio-matrices"},
+  {"slug": "mesomorph-lean-bulking-macros-mifflin-protocol", "category": "macro-ratio-matrices"},
+  {"slug": "intermittent-fasting-16-8-macro-split-1800-calories", "category": "macro-ratio-matrices"},
+  {"slug": "insulin-resistance-macro-calculator-low-glycemic", "category": "macro-ratio-matrices"},
+  {"slug": "reverse-dieting-metabolic-adaptation-macro-matrix", "category": "macro-ratio-matrices"},
+  {"slug": "carb-cycling-fat-loss-metabolic-flexibility-matrix", "category": "macro-ratio-matrices"},
+  {"slug": "paleo-metabolic-reset-macro-balance-guide", "category": "macro-ratio-matrices"},
+  {"slug": "vegetarian-high-protein-muscle-synthesis-macros", "category": "macro-ratio-matrices"},
+  {"slug": "vegan-metabolic-efficiency-macro-calculation", "category": "macro-ratio-matrices"},
+  {"slug": "mifflin-st-jeor-bmr-calculator-slow-metabolism", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "clinical-metabolic-testing-diagnostic-profile", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "ideal-weight-calculator-bmi-over-30-reset", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "basal-metabolic-rate-inflection-point-macros", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "resting-energy-expenditure-mifflin-formula-tracking", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "total-daily-energy-expenditure-tdee-diagnostic", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "thyroid-sluggish-metabolism-bmr-calculator-math", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "age-related-metabolic-slowdown-mifflin-formula", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "visceral-fat-loss-bmr-diagnostic-protocol", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "metabolic-age-deficit-calculation-matrix", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "pcos-insulin-sensitivity-metabolic-dashboard", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "post-menopause-metabolic-recovery-calculator", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "cortisol-belly-fat-metabolic-impact-score", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "sleep-deprivation-metabolic-deceleration-matrix", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "gut-microbiome-belly-fat-accumulation-macros", "category": "microbiome-metabolism-bridges"},
+  {"slug": "bacterial-imbalance-unexplained-weight-gain-fix", "category": "microbiome-metabolism-bridges"},
+  {"slug": "reverse-slow-metabolism-lean-bacteria-strains", "category": "microbiome-metabolism-bridges"},
+  {"slug": "stop-sugar-cravings-metabolic-calculator-reset", "category": "microbiome-metabolism-bridges"},
+  {"slug": "meghan-see-240-lbs-weight-loss-protocol", "category": "microbiome-metabolism-bridges"},
+  {"slug": "ivy-league-weight-loss-bacteria-research-macros", "category": "microbiome-metabolism-bridges"},
+  {"slug": "greenselect-phytosome-absorption-metabolic-speed", "category": "microbiome-metabolism-bridges"},
+  {"slug": "garcinia-mangostana-belly-fat-reduction-matrix", "category": "microbiome-metabolism-bridges"},
+  {"slug": "sphaeranthus-indicus-gut-microflora-weight-loss", "category": "microbiome-metabolism-bridges"},
+  {"slug": "chronic-cortisol-belly-fat-microbiome-flora", "category": "microbiome-metabolism-bridges"},
+  {"slug": "probiotic-strain-akkermansia-metabolic-impact", "category": "microbiome-metabolism-bridges"},
+  {"slug": "fiber-fermentation-metabolic-acid-production", "category": "microbiome-metabolism-bridges"},
+  {"slug": "leaky-gut-metabolic-inflammation-reduction", "category": "microbiome-metabolism-bridges"},
+  {"slug": "sugar-addiction-neuro-metabolic-feedback-loop", "category": "microbiome-metabolism-bridges"},
+  {"slug": "metabolic-inflection-point-stress-hormone-fix", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "fat-burning-zone-heart-rate-metabolic-calc", "category": "macro-ratio-matrices"},
+  {"slug": "epoc-afterburn-effect-metabolic-optimizer", "category": "macro-ratio-matrices"},
+  {"slug": "nutrient-timing-metabolic-sensitivity-window", "category": "macro-ratio-matrices"},
+  {"slug": "fasted-cardio-metabolic-lipolysis-calculator", "category": "macro-ratio-matrices"},
+  {"slug": "protein-sparing-modified-fast-macro-guide", "category": "macro-ratio-matrices"},
+  {"slug": "macros-for-endurance-athletes-metabolic-fuel", "category": "macro-ratio-matrices"},
+  {"slug": "macros-for-high-intensity-interval-training", "category": "macro-ratio-matrices"},
+  {"slug": "metabolic-damage-recovery-calculator-macros", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "set-point-weight-theory-metabolic-adjustment", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "thermogenesis-cold-exposure-metabolic-boost", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "brown-fat-activation-metabolic-rate-increase", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "glucose-tolerance-test-metabolic-predictor", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "hemoglobin-a1c-metabolic-health-calculator", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "resting-heart-rate-metabolic-fitness-proxy", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "vo2-max-metabolic-capacity-estimation-tool", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "mitochondrial-efficiency-metabolic-output", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "atp-production-metabolic-energy-calculator", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "gut-brain-axis-cravings-regulation-matrix", "category": "microbiome-metabolism-bridges"},
+  {"slug": "short-chain-fatty-acid-metabolic-benefits", "category": "microbiome-metabolism-bridges"},
+  {"slug": "prebiotic-fiber-metabolic-fuel-calculator", "category": "microbiome-metabolism-bridges"},
+  {"slug": "dysbiosis-weight-gain-metabolic-connection", "category": "microbiome-metabolism-bridges"},
+  {"slug": "metabolic-endotoxemia-inflammation-reset", "category": "microbiome-metabolism-bridges"},
+  {"slug": "bile-acid-metabolic-lipid-absorption-calc", "category": "microbiome-metabolism-bridges"},
+  {"slug": "circadian-rhythm-metabolic-alignment-guide", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "shift-work-metabolic-disruption-mitigation", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "blue-light-metabolic-hormone-suppression-fix", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "hydration-metabolic-enzyme-activity-index", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "electrolyte-balance-metabolic-impulse-calc", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "acid-alkaline-metabolic-homeostasis-check", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "heavy-metal-detox-metabolic-impact-score", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "antioxidant-status-metabolic-protection-calc", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "free-radical-damage-metabolic-aging-model", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "telomere-length-metabolic-longevity-index", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "cellular-respiration-metabolic-fuel-model", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "glycemic-index-load-metabolic-response-calc", "category": "macro-ratio-matrices"},
+  {"slug": "insulin-index-food-metabolic-impact-score", "category": "macro-ratio-matrices"},
+  {"slug": "protein-leucine-threshold-metabolic-trigger", "category": "macro-ratio-matrices"},
+  {"slug": "mTOR-pathway-metabolic-growth-calculator", "category": "macro-ratio-matrices"},
+  {"slug": "ampk-activation-metabolic-longevity-matrix", "category": "macro-ratio-matrices"},
+  {"slug": "fatty-acid-oxidation-metabolic-calculator", "category": "macro-ratio-matrices"},
+  {"slug": "gluconeogenesis-metabolic-requirement-calc", "category": "macro-ratio-matrices"},
+  {"slug": "ketone-production-metabolic-efficiency-score", "category": "macro-ratio-matrices"},
+  {"slug": "beta-oxidation-metabolic-pathway-optimizer", "category": "macro-ratio-matrices"},
+  {"slug": "pyruvate-dehydrogenase-metabolic-flux-calc", "category": "macro-ratio-matrices"},
+  {"slug": "citric-acid-cycle-metabolic-efficiency-tool", "category": "macro-ratio-matrices"},
+  {"slug": "electron-transport-chain-metabolic-boost", "category": "macro-ratio-matrices"},
+  {"slug": "fat-cell-hypertrophy-metabolic-diagnostic", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "leptin-resistance-metabolic-hunger-profile", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "ghrelin-hormone-metabolic-satiety-calculator", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "adiponectin-metabolic-fat-loss-indicator", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "igf-1-metabolic-growth-factor-diagnostic", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "growth-hormone-metabolic-recovery-profile", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "testosterone-metabolic-fat-loss-calculator", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "estrogen-dominance-metabolic-weight-impact", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "progesterone-metabolic-balance-diagnostic", "category": "metabolic-diagnostic-profiles"},
+  {"slug": "dhea-metabolic-stress-response-calculator", "category": "metabolic-diagnostic-profiles"},  
+  { "slug": "cortisol-stress-metabolic-impact-calculator", "category": "metabolic-hormonal-optimization" },
+  { "slug": "zinc-deficiency-metabolic-repair-protocol", "category": "nutrient-optimization-matrix" },
+  { "slug": "intermittent-fasting-metabolic-switch-calculator", "category": "fasting-optimization" },
+  { "slug": "magnesium-glycinate-metabolic-recovery-matrix", "category": "supplementation-intelligence" },
+  { "slug": "thyroid-function-metabolic-rate-estimator", "category": "metabolic-hormonal-optimization" },
+  { "slug": "vitamin-d3-metabolic-efficiency-score", "category": "nutrient-optimization-matrix" },
+  { "slug": "circadian-rhythm-metabolic-alignment-tool", "category": "lifestyle-bio-optimization" },
+  { "slug": "omega-3-fatty-acid-metabolic-balance-profile", "category": "nutrient-optimization-matrix" },
+  { "slug": "insulin-sensitivity-metabolic-scorecard", "category": "metabolic-hormonal-optimization" },
+  { "slug": "mitochondrial-health-energy-output-calc", "category": "metabolic-longevity-matrix" },
+  { "slug": "gut-microbiome-metabolic-diversity-index", "category": "digestive-intelligence" },
+  { "slug": "b12-metabolic-energy-production-profile", "category": "nutrient-optimization-matrix" },
+  { "slug": "glutathione-metabolic-detox-pathway-calc", "category": "metabolic-hormonal-optimization" },
+  { "slug": "serotonin-metabolic-mood-balance-matrix", "category": "lifestyle-bio-optimization" },
+  { "slug": "coq10-metabolic-cellular-respiration-tool", "category": "supplementation-intelligence" },
+  { "slug": "protein-timing-metabolic-anabolic-calculator", "category": "macro-ratio-matrices" },
+  { "slug": "water-retention-metabolic-balance-score", "category": "metabolic-hormonal-optimization" },
+  { "slug": "glycemic-index-metabolic-impact-analyzer", "category": "macro-ratio-matrices" },
+  { "slug": "trace-mineral-metabolic-cofactor-profile", "category": "nutrient-optimization-matrix" },
+  { "slug": "creatine-metabolic-power-output-calculator", "category": "supplementation-intelligence" },
+  { "slug": "melatonin-metabolic-sleep-optimization-matrix", "category": "lifestyle-bio-optimization" },
+  { "slug": "iron-metabolic-oxygen-transport-score", "category": "nutrient-optimization-matrix" },
+  { "slug": "branched-chain-amino-acid-metabolic-ratio", "category": "macro-ratio-matrices" },
+  { "slug": "electrolyte-metabolic-balance-calculator", "category": "nutrient-optimization-matrix" },
+  { "slug": "leptin-resistance-metabolic-correction-tool", "category": "metabolic-hormonal-optimization" },
+  { "slug": "testosterone-metabolic-optimization-matrix", "category": "metabolic-hormonal-optimization" },
+  { "slug": "progesterone-metabolic-impact-analyzer", "category": "metabolic-hormonal-optimization" },
+  { "slug": "dhea-metabolic-stress-response-calc", "category": "metabolic-hormonal-optimization" },
+  { "slug": "iodine-metabolic-thyroid-support-profile", "category": "nutrient-optimization-matrix" },
+  { "slug": "caffeine-metabolic-half-life-calculator", "category": "lifestyle-bio-optimization" },
+  { "slug": "fiber-metabolic-microbiome-fuel-ratio", "category": "digestive-intelligence" },
+  { "slug": "hydration-metabolic-osmotic-pressure-calc", "category": "lifestyle-bio-optimization" },
+  { "slug": "ketone-metabolic-switching-efficiency-index", "category": "fasting-optimization" },
+  { "slug": "carnitine-metabolic-fat-transport-matrix", "category": "supplementation-intelligence" },
+  { "slug": "choline-metabolic-cognitive-support-score", "category": "nutrient-optimization-matrix" },
+  { "slug": "selenium-metabolic-antioxidant-calc", "category": "nutrient-optimization-matrix" },
+  { "slug": "calcium-metabolic-bone-density-profile", "category": "nutrient-optimization-matrix" },
+  { "slug": "potassium-sodium-metabolic-ratio-calc", "category": "nutrient-optimization-matrix" },
+  { "slug": "folate-metabolic-methylation-efficiency", "category": "nutrient-optimization-matrix" },
+  { "slug": "niacin-metabolic-lipid-profile-analyzer", "category": "nutrient-optimization-matrix" },
+  { "slug": "chromium-metabolic-blood-sugar-calc", "category": "nutrient-optimization-matrix" },
+  { "slug": "alpha-lipoic-acid-metabolic-energy-matrix", "category": "supplementation-intelligence" },
+  { "slug": "taurine-metabolic-cellular-hydration-score", "category": "supplementation-intelligence" },
+  { "slug": "glutamine-metabolic-gut-repair-profile", "category": "digestive-intelligence" },
+  { "slug": "resveratrol-metabolic-longevity-calc", "category": "metabolic-longevity-matrix" },
+  { "slug": "quercetin-metabolic-inflammation-score", "category": "metabolic-hormonal-optimization" },
+  { "slug": "curcumin-metabolic-bioavailability-index", "category": "supplementation-intelligence" },
+  { "slug": "ashwagandha-metabolic-adaptogen-calc", "category": "lifestyle-bio-optimization" },
+  { "slug": "rhodiola-metabolic-energy-sustain-matrix", "category": "lifestyle-bio-optimization" },
+  { "slug": "panax-ginseng-metabolic-vitality-score", "category": "lifestyle-bio-optimization" },
+  { "slug": "valine-metabolic-muscle-synthesis-calc", "category": "macro-ratio-matrices" },
+  { "slug": "leucine-metabolic-threshold-optimizer", "category": "macro-ratio-matrices" },
+  { "slug": "isoleucine-metabolic-energy-matrix", "category": "macro-ratio-matrices" },
+  { "slug": "lysine-metabolic-tissue-repair-score", "category": "macro-ratio-matrices" },
+  { "slug": "methionine-metabolic-methylation-calc", "category": "nutrient-optimization-matrix" },
+  { "slug": "phenylalanine-metabolic-neuro-profile", "category": "lifestyle-bio-optimization" },
+  { "slug": "threonine-metabolic-gut-health-index", "category": "digestive-intelligence" },
+  { "slug": "tryptophan-metabolic-sleep-matrix", "category": "lifestyle-bio-optimization" },
+  { "slug": "histidine-metabolic-histamine-balance", "category": "metabolic-hormonal-optimization" },
+  { "slug": "arginine-metabolic-vasodilation-calc", "category": "lifestyle-bio-optimization" },
+  { "slug": "beta-alanine-metabolic-buffer-capacity", "category": "supplementation-intelligence" },
+  { "slug": "betaine-metabolic-performance-score", "category": "supplementation-intelligence" },
+  { "slug": "hca-metabolic-fat-blocker-analysis", "category": "supplementation-intelligence" },
+  { "slug": "epgc-metabolic-thermogenic-calc", "category": "supplementation-intelligence" },
+  { "slug": "carnosine-metabolic-anti-glycation-index", "category": "metabolic-longevity-matrix" },
+  { "slug": "nmn-metabolic-nad-plus-boost-matrix", "category": "metabolic-longevity-matrix" },
+  { "slug": "nr-metabolic-cellular-repair-calculator", "category": "metabolic-longevity-matrix" },
+  { "slug": "pterostilbene-metabolic-longevity-score", "category": "metabolic-longevity-matrix" },
+  { "slug": "sulforaphane-metabolic-nrf2-pathway-calc", "category": "metabolic-longevity-matrix" },
+  { "slug": "indole-3-carbinol-metabolic-balance", "category": "metabolic-hormonal-optimization" },
+  { "slug": "diindolylmethane-metabolic-hormone-matrix", "category": "metabolic-hormonal-optimization" },
+  { "slug": "calcium-d-glucarate-metabolic-detox-calc", "category": "metabolic-hormonal-optimization" },
+  { "slug": "milk-thistle-metabolic-liver-support-score", "category": "digestive-intelligence" },
+  { "slug": "dandelion-root-metabolic-diuretic-matrix", "category": "digestive-intelligence" },
+  { "slug": "artichoke-extract-metabolic-bile-flow-calc", "category": "digestive-intelligence" },
+  { "slug": "ginger-metabolic-gastric-emptying-index", "category": "digestive-intelligence" },
+  { "slug": "peppermint-metabolic-gut-comfort-score", "category": "digestive-intelligence" },
+  { "slug": "slippery-elm-metabolic-mucosal-support", "category": "digestive-intelligence" },
+  { "slug": "marshmallow-root-metabolic-gut-soothe", "category": "digestive-intelligence" },
+  { "slug": "licorice-root-metabolic-adrenal-matrix", "category": "metabolic-hormonal-optimization" },
+  { "slug": "holy-basil-metabolic-stress-calc", "category": "lifestyle-bio-optimization" },
+  { "slug": "lemon-balm-metabolic-calm-index", "category": "lifestyle-bio-optimization" },
+  { "slug": "chamomile-metabolic-sleep-aid-score", "category": "lifestyle-bio-optimization" },
+  { "slug": "valerian-root-metabolic-sedative-matrix", "category": "lifestyle-bio-optimization" },
+  { "slug": "passionflower-metabolic-anxiety-calc", "category": "lifestyle-bio-optimization" },
+  { "slug": "st-johns-wort-metabolic-mood-support", "category": "lifestyle-bio-optimization" },
+  { "slug": "5-htp-metabolic-precursor-index", "category": "lifestyle-bio-optimization" },
+  { "slug": "theanine-metabolic-focus-calculator", "category": "lifestyle-bio-optimization" },
+  { "slug": "gaba-metabolic-neurotransmitter-matrix", "category": "lifestyle-bio-optimization" },
+  { "slug": "phosphatidylserine-metabolic-cortisol-calc", "category": "metabolic-hormonal-optimization" },
+  { "slug": "inositol-metabolic-insulin-sensitizer-score", "category": "metabolic-hormonal-optimization" },
+  { "slug": "berberine-metabolic-glucose-disposal-matrix", "category": "macro-ratio-matrices" },
+  { "slug": "cinnamon-metabolic-blood-sugar-calc", "category": "macro-ratio-matrices" },
+  { "slug": "fenugreek-metabolic-carb-control-index", "category": "macro-ratio-matrices" },
+  { "slug": "gymnema-sylvestre-metabolic-sugar-blocker", "category": "macro-ratio-matrices" },
+  { "slug": "bitter-melon-metabolic-insulin-calc", "category": "macro-ratio-matrices" },
+  { "slug": "apple-cider-vinegar-metabolic-acidity-matrix", "category": "digestive-intelligence" },
+  { "slug": "digestive-enzyme-metabolic-absorption-score", "category": "digestive-intelligence" },
+  { "slug": "probiotic-metabolic-gut-flora-calc", "category": "digestive-intelligence" },
+  { "slug": "prebiotic-fiber-metabolic-fuel-matrix", "category": "digestive-intelligence" }]
