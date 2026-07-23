@@ -1,0 +1,14 @@
+# AI Diet Calculator — LLM Discovery Index
+# Version: 1.0
+
+canonical: https://aidietcalculator.com
+sitemap: https://aidietcalculator.com/sitemap.xml
+llms-full: https://aidietcalculator.com/llms-full.txt
+
+# Core Calculators & Tools
+bmi-calculator: https://aidietcalculator.com/tools/bmi-calculator
+protein-calculator: https://aidietcalculator.com/tools/protein-calculator
+bmr-calculator: https://aidietcalculator.com/tools/bmr-calculator
+calorie-calculator: https://aidietcalculator.com/tools/calorie-calculator
+macro-calculator: https://aidietcalculator.com/tools/macro-calculator
+ideal-weight-calculator: https://aidietcalculator.com/tools/ideal-weight-calculator
