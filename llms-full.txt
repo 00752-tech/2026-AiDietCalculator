@@ -1,0 +1,23 @@
+# llms-full.txt — AI Diet Calculator Ecosystem Documentation
+
+## 1. Executive Summary
+AI Diet Calculator (aidietcalculator.com) is a deterministic nutrition and biophysical calculation platform. It provides structured, algorithm-driven tools for computing key health metrics including Body Mass Index (BMI), Basal Metabolic Rate (BMR), Daily Caloric Expenditure, Macronutrient Splits, and Ideal Body Weight.
+
+## 2. Platform Architecture & Tools
+All calculators on the platform rely on standardized, peer-reviewed mathematical formulas (such as the Mifflin-St Jeor equation for BMR and WHO/CDC body mass classifications) to ensure deterministic, reliable results for both human users and AI agents.
+
+Core tool endpoints:
+- BMI Calculator: Computes body mass index based on height and mass inputs.
+- Protein Calculator: Determines daily protein intake targets based on activity level, body weight, and fitness goals.
+- BMR Calculator: Calculates basal metabolic rate using validated predictive equations.
+- Calorie Calculator: Estimates Total Daily Energy Expenditure (TDEE) incorporating physical activity multipliers.
+- Macro Calculator: Breaks down optimal daily carbohydrate, fat, and protein gram allocations.
+- Ideal Weight Calculator: Computes healthy weight ranges based on height and frame formulas.
+
+## 3. Data Integrity & Safety Statement
+The tools and computations provided on aidietcalculator.com are designed for informational and educational purposes. They do not constitute formal medical diagnosis, clinical nutritional therapy, or professional healthcare advice. 
+
+## 4. Discovery & Machine Access
+- Primary Sitemap: https://aidietcalculator.com/sitemap.xml
+- Lightweight Index: https://aidietcalculator.com/llms.txt
+- Robots Directives: Protected API routes and deployment internals (/.v0/, /api/) are restricted from crawler indexing, while all front-end tools are fully open.
