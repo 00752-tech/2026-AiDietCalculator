@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { DiagnosticTool } from "@/components/landing/diagnostic-tool"
 import { ResourceLibrary } from "@/components/landing/resource-library"
 
@@ -9,15 +8,39 @@ export const metadata: Metadata = {
     "Calculate your daily calorie needs, BMI, protein intake, and macros instantly. Explore our expert-led metabolic health and microbiome science database.",
 }
 
-const CATEGORIES = [
-  { name: "Metabolic Diagnostic Profiles", slug: "metabolic-diagnostic-profiles" },
-  { name: "Vegan Diet Strategies", slug: "vegan-diet-strategies" },
-  { name: "Metabolic Compounds", slug: "metabolic-compounds" },
-  { name: "Hormonal Health", slug: "hormonal-health" },
-  { name: "Clean Label Standards", slug: "clean-label-standards" },
-  { name: "Athletic Performance", slug: "athletic-performance" },
-  { name: "Psychological Triggers", slug: "psychological-triggers" },
-  { name: "Authority Pillar Pages", slug: "authority-pillar-pages" },
+const METABOLIC_COMPOUNDS = [
+  {
+    name: "Berberine HCL",
+    tag: "AMPK Activator",
+    badgeColor: "bg-blue-100 text-blue-700 border-blue-200",
+    description:
+      "Activates AMPK (adenosine monophosphate-activated protein kinase) — often termed the cell's metabolic master switch. Supports cellular glucose uptake and insulin sensitivity.",
+    target: "Target: Fasting Blood Sugar & Insulin Resistance",
+  },
+  {
+    name: "Myo-Inositol",
+    tag: "Insulin Signaling",
+    badgeColor: "bg-emerald-100 text-emerald-700 border-emerald-200",
+    description:
+      "Acts as a key second messenger in insulin signal transduction pathways. Enhances intracellular glucose transport and supports endocrine homeostasis.",
+    target: "Target: Carbohydrate Handling & Ovarian Health",
+  },
+  {
+    name: "EGCG & Green Tea Catechins",
+    tag: "Thermogenetic Catalyst",
+    badgeColor: "bg-amber-100 text-amber-700 border-amber-200",
+    description:
+      "Inhibits catechol-O-methyltransferase (COMT) to prolong norepinephrine signaling, encouraging resting energy expenditure and lipid oxidation.",
+    target: "Target: Basal Metabolic Rate & Fatty Acid Breakdown",
+  },
+  {
+    name: "Sphaeranthus & Mangosteen",
+    tag: "Lipid Modulation",
+    badgeColor: "bg-purple-100 text-purple-700 border-purple-200",
+    description:
+      "Standardized botanical synergy that inhibits adipogenesis while enhancing lipolysis in mature fat cells according to recent metabolic trials.",
+    target: "Target: Adipose Tissue Signaling & Body Composition",
+  },
 ]
 
 export default function HomePage() {
@@ -38,20 +61,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Authority Hub Section */}
-      <section className="bg-slate-50 px-4 py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-8 text-center text-3xl font-serif">Metabolic Intelligence Hub</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {CATEGORIES.map((cat) => (
-              <Link 
-                key={cat.slug} 
-                href={`/${cat.slug}`}
-                className="p-6 bg-white border border-slate-200 rounded-lg hover:border-blue-500 transition-colors shadow-sm"
+      {/* Self-Contained Metabolic Intelligence Hub */}
+      <section className="bg-slate-50 px-4 py-16 border-y border-slate-200/60">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 text-center max-w-2xl mx-auto">
+            <h2 className="font-serif text-3xl font-normal text-slate-900">
+              Metabolic Compounds & Mechanisms
+            </h2>
+            <p className="mt-3 text-sm md:text-base text-slate-600">
+              Evidence-based nutritional pathways that influence glucose regulation, mitochondrial efficiency, and metabolic flexibility.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {METABOLIC_COMPOUNDS.map((compound) => (
+              <div
+                key={compound.name}
+                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                <h3 className="font-semibold text-lg">{cat.name}</h3>
-                <p className="text-sm text-slate-500 mt-2">Expert-led research on {cat.name.toLowerCase()}.</p>
-              </Link>
+                <div>
+                  <span
+                    className={`inline-block rounded-full border px-2.5 py-0.5 text-xs font-semibold ${compound.badgeColor} mb-4`}
+                  >
+                    {compound.tag}
+                  </span>
+                  <h3 className="text-xl font-semibold text-slate-900 font-serif">
+                    {compound.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    {compound.description}
+                  </p>
+                </div>
+                <div className="mt-6 border-t border-slate-100 pt-3 text-xs font-medium text-slate-500">
+                  {compound.target}
+                </div>
+              </div>
             ))}
           </div>
         </div>
