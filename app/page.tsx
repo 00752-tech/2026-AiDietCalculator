@@ -46,7 +46,7 @@ export default function HomePage() {
             {CATEGORIES.map((cat) => (
               <Link 
                 key={cat.slug} 
-                href={`/content/${cat.slug}`}
+                href={`/${cat.slug}`}
                 className="p-6 bg-white border border-slate-200 rounded-lg hover:border-blue-500 transition-colors shadow-sm"
               >
                 <h3 className="font-semibold text-lg">{cat.name}</h3>
