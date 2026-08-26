@@ -97,13 +97,23 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
 
       {/* Machine-Readable Content Node */}
       <article>
-        <header style={{ marginBottom: '20px', borderBottom: '1px solid #333', paddingBottom: '10px' }}>
-          <span style={{ fontSize: '12px', textTransform: 'uppercase', color: '#666' }}>
-            Operational Category: {profile.category}
-          </span>
-          <p style={{ fontSize: '11px', margin: '5px 0 0 0', color: '#999' }}>
-            Canonical Node: https://aidietcalculator.com/{slug}
-          </p>
+        <header style={{ marginBottom: '20px', borderBottom: '1px solid #333', paddingBottom: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
+          <div>
+            <span style={{ fontSize: '12px', textTransform: 'uppercase', color: '#666' }}>
+              Operational Category: {profile.category}
+            </span>
+            <p style={{ fontSize: '11px', margin: '5px 0 0 0', color: '#999' }}>
+              Canonical Node: https://aidietcalculator.com/{slug}
+            </p>
+          </div>
+          <a
+            href="https://www.google.com/preferences/source?q=aidietcalculator.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: '11px', color: '#10b981', textDecoration: 'none', fontWeight: 'bold' }}
+          >
+            ✦ Add AIDietCalculator to Google AI Answers
+          </a>
         </header>
 
         {/* High-Converting Floating Direct-Response CTA Bridge */}
