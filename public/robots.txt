@@ -1,6 +1,44 @@
-User-agent: *
-Allow: /
-Disallow: /.v0/
-Disallow: /api/
+# ==========================================================
+# AIDietCalculator.com - AI-Ready Robots.txt 2026 (MCP v1.2)
+# Optimized for Agentic Discovery + llms.txt handshake
+# ==========================================================
 
+# Global baseline & AI Crawler Handshakes (Explicit Allow)
+User-agent: *
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Googlebot-Extended
+User-agent: Bingbot
+User-agent: BingPreview
+User-agent: CCBot
+User-agent: Grok
+User-agent: xAI
+User-agent: Copilot
+User-agent: Meta
+User-agent: YouBot
+User-agent: DeepSeek
+User-agent: Mistral
+
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /library/
+Allow: /tools/
+Allow: /recommend/
+
+# Block admin/private & internal build paths
+Disallow: /.v0/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /*_buildManifest.js$
+Disallow: /*_ssgManifest.js$
+Disallow: /*_middlewareManifest.js$
+
+# MASTER SITEMAP INDEX
 Sitemap: https://aidietcalculator.com/sitemap.xml
