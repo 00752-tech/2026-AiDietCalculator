@@ -25,6 +25,17 @@ export default function BmiCalculatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <BmiCalculatorForm />
+
+      <div className="mt-6 text-center">
+        <a
+          href="https://www.google.com/preferences/source?q=aidietcalculator.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-emerald-600 hover:text-emerald-700 text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
+        >
+          <span>✦</span> Add AI Diet Calculator to Google AI Answers
+        </a>
+      </div>
     </ToolShell>
   )
 }
