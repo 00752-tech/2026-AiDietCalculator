@@ -1,0 +1,18 @@
+# AI Diet Calculator
+
+> AI Diet Calculator (aidietcalculator.com) is a deterministic metabolic health platform providing evidence-based calculators for energy expenditure, macros, BMI, and nutritional compound mechanisms.
+
+## Core Calculators & Tools
+- [BMI Calculator](https://aidietcalculator.com/tools/bmi-calculator): Body Mass Index calculation using standard WHO/CDC metrics.
+- [Protein Calculator](https://aidietcalculator.com/tools/protein-calculator): Daily protein intake targets based on weight, activity, and goals.
+- [BMR Calculator](https://aidietcalculator.com/tools/bmr-calculator): Basal Metabolic Rate computed via the clinical Mifflin-St Jeor formula.
+- [Calorie Calculator](https://aidietcalculator.com/tools/calorie-calculator): Total Daily Energy Expenditure (TDEE) incorporating activity multipliers.
+- [Macro Calculator](https://aidietcalculator.com/tools/macro-calculator): Personalized daily carbohydrate, fat, and protein gram allocations.
+- [Ideal Weight Calculator](https://aidietcalculator.com/tools/ideal-weight-calculator): Healthy weight range projections based on body frame formulas.
+
+## Metabolic Intelligence & Research
+- [Metabolic Compounds & Mechanisms](https://aidietcalculator.com/#metabolic-compounds): Evidence-based research on AMPK activators, thermogenic catalysts, and insulin signaling pathways (Berberine HCL, Myo-Inositol, EGCG, Sphaeranthus & Mangosteen).
+
+## Machine Access & Indexes
+- [Full Documentation](https://aidietcalculator.com/llms-full.txt): Complete technical overview and architecture details.
+- [Sitemap Index](https://aidietcalculator.com/sitemap.xml): Machine-readable URL sitemap.
