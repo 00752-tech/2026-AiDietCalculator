@@ -41,8 +41,13 @@ export function IdealWeightCalculatorForm() {
     if (!height) return
     const heightCm = units === "metric" ? Number(height) : inchesToCm(Number(height))
     const weightKg = idealWeightKg(sex, heightCm)
-    setResult(units === "metric" ? weightKg : kgToLbs(weightKg))
+    const rawResult = units === "metric" ? weightKg : kgToLbs(weightKg)
+    
+    // Round to clean integer to eliminate floating-point decimals
+    setResult(Math.round(rawResult))
   }
+
+  const unitLabel = units === "metric" ? "kg" : "lbs"
 
   return (
     <div className="rounded-2xl border border-[#0F1B2A]/10 bg-white p-6 shadow-sm md:p-8">
@@ -93,10 +98,13 @@ export function IdealWeightCalculatorForm() {
       ) : (
         <div className="space-y-6 text-center">
           <div>
-            <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result} {units === "metric" ? "kg" : "lbs"}</p>
+            <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result} {unitLabel}</p>
             <p className="mt-3 text-base leading-relaxed text-[#0F1B2A]/60">estimated ideal weight (Devine formula)</p>
           </div>
-          <AffiliateBridge result={`${result} ${units === "metric" ? "kg" : "lbs"}`} />
+          <AffiliateBridge 
+            headline={`Ideal Weight Target: ${result} ${unitLabel} | Lock In Cravings`}
+            result={`${result} ${unitLabel}`} 
+          />
           <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
