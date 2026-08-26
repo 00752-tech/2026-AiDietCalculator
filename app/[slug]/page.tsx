@@ -54,7 +54,7 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
   }
 
   const profile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  const trackingLink = `https://aidietcalculator.com/recommend/catalyst?utm_campaign=${slug}`;
+  const trackingLink = `https://aidietcalculator.com/recommend/berberine-patch?utm_campaign=${slug}`;
 
   // Structured Data Injection Payload (E-E-A-T / YMYL Optimized)
   const jsonLd = {
@@ -79,7 +79,7 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
     },
     'reviewedBy': {
       '@type': 'MedicalOrganization',
-      'name': 'Biome® Technical Advisory Board'
+      'name': 'Metabolic Research Advisory Board'
     },
     'audience': {
       '@type': 'Patient',
@@ -127,7 +127,7 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
         }}>
           <h3 style={{ margin: '0 0 10px 0', color: '#ff4d4d' }}>🚨 CRITICAL METABOLIC BREAKTHROUGH</h3>
           <p style={{ fontSize: '14px', lineHeight: '1.5', margin: '0 0 15px 0' }}>
-            Calculators only reveal your raw mathematical caloric limits. If your internal gut microbiome is suffering from a bacterial imbalance, your metabolism remains locked down regardless of macro tracking. Real-world case studies prove that restoring specific lean bacteria strains is the hidden variable behind accelerated, sustained weight reduction.
+            Calculators only reveal your raw mathematical caloric limits. If defensive hunger spikes and metabolic plateaus keep stopping your progress, macro tracking alone isn't enough. Berberine activates key AMPK pathways to curb cravings and ignite fat oxidation. Skip the heavy pills and injections—this needle-free, plant-derived transdermal patch delivers continuous, slow-release satiety support all day long.
           </p>
           <a 
             href={trackingLink}
@@ -144,7 +144,7 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
               fontSize: '15px'
             }}
           >
-            👉 Run Your Metabolic Gut Analysis & Activate Lean Bacteria Now
+            👉 Claim Your All-Day Berberine Satiety Patch Now →
           </a>
         </div>
 
