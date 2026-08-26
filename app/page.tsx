@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { DiagnosticTool } from "@/components/landing/diagnostic-tool"
 import { ResourceLibrary } from "@/components/landing/resource-library"
 
@@ -9,6 +8,9 @@ export const metadata: Metadata = {
     "Calculate your daily calorie needs, BMI, protein intake, and macros instantly. Explore our expert-led metabolic health and microbiome science database.",
 }
 
+// Replace with your preferred affiliate recommendation endpoint or tracking URL
+const AFFILIATE_OFFER_URL = "https://aidietcalculator.com/recommend/catalyst?utm_campaign=metabolic-compounds-hub"
+
 const METABOLIC_COMPOUNDS = [
   {
     name: "Berberine HCL",
@@ -17,7 +19,6 @@ const METABOLIC_COMPOUNDS = [
     description:
       "Activates AMPK (adenosine monophosphate-activated protein kinase) — often termed the cell's metabolic master switch. Supports cellular glucose uptake and insulin sensitivity.",
     target: "Target: Fasting Blood Sugar & Insulin",
-    ctaText: "Calculate Glucose Baseline",
   },
   {
     name: "Myo-Inositol",
@@ -26,7 +27,6 @@ const METABOLIC_COMPOUNDS = [
     description:
       "Acts as a key second messenger in insulin signal transduction pathways. Enhances intracellular glucose transport and supports endocrine homeostasis.",
     target: "Target: Carb Handling & Hormonal Health",
-    ctaText: "Analyze Carb Tolerance",
   },
   {
     name: "EGCG & Green Tea",
@@ -35,7 +35,6 @@ const METABOLIC_COMPOUNDS = [
     description:
       "Inhibits catechol-O-methyltransferase (COMT) to prolong norepinephrine signaling, encouraging resting energy expenditure and lipid oxidation.",
     target: "Target: Basal Rate & Fat Breakdown",
-    ctaText: "Calculate Caloric Burn",
   },
   {
     name: "Sphaeranthus & Mangosteen",
@@ -44,7 +43,6 @@ const METABOLIC_COMPOUNDS = [
     description:
       "Standardized botanical synergy that inhibits adipogenesis while enhancing lipolysis in mature fat cells according to recent metabolic trials.",
     target: "Target: Adipose Signaling & Body Composition",
-    ctaText: "Check Fat Loss Targets",
   },
 ]
 
@@ -82,6 +80,7 @@ export default function HomePage() {
             </p>
           </div>
 
+          {/* Clean Informational Grid (No Card Buttons) */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {METABOLIC_COMPOUNDS.map((compound) => (
               <div
@@ -103,28 +102,24 @@ export default function HomePage() {
                 </div>
                 
                 <div className="mt-6 pt-3 border-t border-slate-100">
-                  <p className="text-xs font-medium text-slate-500 mb-4">
+                  <p className="text-xs font-medium text-slate-500">
                     {compound.target}
                   </p>
-                  <Link
-                    href="#diagnostic"
-                    className="block w-full text-center rounded-lg bg-slate-900 px-3 py-2 text-xs font-semibold text-white hover:bg-slate-800 transition-colors shadow-sm"
-                  >
-                    {compound.ctaText} →
-                  </Link>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Bottom Primary CTA */}
+          {/* Single Standout Affiliate Call-to-Action */}
           <div className="mt-12 text-center">
-            <Link
-              href="#diagnostic"
-              className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 transition-all"
+            <a
+              href={AFFILIATE_OFFER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-blue-700 hover:scale-[1.02] transition-all"
             >
-              Run Full Personal Diagnostic Tool
-            </Link>
+              Get the Biome® Protocol Now →
+            </a>
           </div>
         </div>
       </section>
