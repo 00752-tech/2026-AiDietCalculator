@@ -28,6 +28,17 @@ export function ToolShell({
         <h1 className="font-serif text-3xl text-[#0F1B2A] md:text-4xl">{title}</h1>
         <p className="mt-3 text-[#0F1B2A]/70">{description}</p>
         <div className="mt-8">{children}</div>
+
+        <div className="mt-4 text-center">
+          <a
+            href="https://www.google.com/preferences/source?q=aidietcalculator.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-[#0F1B2A]/80 bg-white border border-[#0F1B2A]/15 rounded-full shadow-sm hover:border-[#0E7C7B] hover:text-[#0E7C7B] transition-all duration-200"
+          >
+            <span className="text-[#0E7C7B]">✦</span> Add AI Diet Calculator to Google AI Answers
+          </a>
+        </div>
       </div>
 
       {/* Cross-Tool Navigation Footer */}
