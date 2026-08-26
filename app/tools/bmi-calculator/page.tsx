@@ -31,9 +31,9 @@ export default function BmiCalculatorPage() {
           href="https://www.google.com/preferences/source?q=aidietcalculator.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-emerald-600 hover:text-emerald-700 text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-full shadow-sm hover:border-emerald-500 hover:text-emerald-600 transition-all duration-200"
         >
-          <span>✦</span> Add AI Diet Calculator to Google AI Answers
+          <span className="text-emerald-500">✦</span> Add AI Diet Calculator to Google AI Answers
         </a>
       </div>
     </ToolShell>
