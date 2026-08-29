@@ -57,7 +57,7 @@ export function AffiliateBridge({
 
       {/* Urgency Countdown Banner */}
       <div className="mx-auto mb-5 max-w-sm rounded-lg bg-red-100 py-2 text-center text-sm font-semibold text-red-700 shadow-sm">
-        ⏳ $39 Pricing Reserved For: {minutes}:{seconds.toString().padStart(2, "0")}
+        ⏳ $49 Pricing Reserved For: {minutes}:{seconds.toString().padStart(2, "0")}
       </div>
 
       <Button
