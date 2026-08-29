@@ -124,13 +124,7 @@ function VideoModal({
             style={{ opacity: ended ? 0 : 1 }}
             title="The Biology of Weight Loss"
           />
-          {/* Masks the free-tier Vimeo logo pill (bottom-right corner) —
-              not removable via URL params without an upgraded plan */}
-          <div
-            className="pointer-events-none absolute bottom-0 right-0 h-10 w-16 bg-black md:h-12 md:w-20"
-            aria-hidden="true"
-          />
-        </div>
+          </div>
       </div>
     </div>
   )
