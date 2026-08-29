@@ -54,9 +54,9 @@ export default function HomePage() {
       <section id="diagnostic" className="bg-background px-4 py-12 md:py-20">
         <div className="mx-auto max-w-2xl">
           <div className="mb-12 text-center">
-            <h1 className="mb-4 font-serif text-4xl font-light leading-tight text-foreground md:text-5xl">
-              Your Metabolic Diagnostic
-            </h1>
+            <h1 className="mb-4 font-serif text-4xl font-light leading-tight text-[#0E7C7B] md:text-5xl">
+  Your Metabolic Diagnostic
+</h1>
             <p className="text-lg text-secondary">
               Real numbers for your body. Built on the Mifflin-St Jeor formula — the same protocol behind clinical metabolic testing.
             </p>
