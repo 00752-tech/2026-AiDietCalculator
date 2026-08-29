@@ -77,9 +77,9 @@ export default function HomePage() {
       <section className="bg-slate-50 px-4 py-16 border-y border-slate-200/60">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 text-center max-w-2xl mx-auto">
-            <h2 className="font-serif text-3xl font-normal text-slate-900">
-              Metabolic Compounds & Mechanisms
-            </h2>
+            <h2 className="font-serif text-3xl font-normal text-[#0E7C7B]">
+  Metabolic Compounds & Mechanisms
+</h2>
             <p className="mt-3 text-sm md:text-base text-slate-600">
               Evidence-based nutritional pathways that influence glucose regulation, mitochondrial efficiency, and metabolic flexibility.
             </p>
