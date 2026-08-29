@@ -5,44 +5,44 @@ import { ResourceLibrary } from "@/components/landing/resource-library"
 export const metadata: Metadata = {
   title: "AI Diet Calculator — Metabolic Diagnostic Hub",
   description:
-    "Calculate your daily calorie needs, BMI, protein intake, and macros instantly. Explore our expert-led metabolic health and thermogenic science database.",
+    "Calculate your daily calorie needs, BMI, protein intake, and macros instantly. Explore our expert-led metabolic health and microbiome science database.",
 }
 
-// Updated tracking URL pointing directly to the Metabo Drops recommendation bridge
-const AFFILIATE_OFFER_URL = "https://aidietcalculator.com/recommend/metabo-drops?utm_campaign=coffee-metabolism-hub"
+// Replace with your preferred affiliate recommendation endpoint or tracking URL
+const AFFILIATE_OFFER_URL = "https://aidietcalculator.com/recommend/catalyst?utm_campaign=metabolic-compounds-hub"
 
 const METABOLIC_COMPOUNDS = [
   {
-    name: "EGCG & Green Tea Extract",
+    name: "Berberine HCL",
+    tag: "AMPK Activator",
+    badgeColor: "bg-blue-100 text-blue-700 border-blue-200",
+    description:
+      "Activates AMPK (adenosine monophosphate-activated protein kinase) — often termed the cell's metabolic master switch. Supports cellular glucose uptake and insulin sensitivity.",
+    target: "Target: Fasting Blood Sugar & Insulin",
+  },
+  {
+    name: "Myo-Inositol",
+    tag: "Insulin Signaling",
+    badgeColor: "bg-emerald-100 text-emerald-700 border-emerald-200",
+    description:
+      "Acts as a key second messenger in insulin signal transduction pathways. Enhances intracellular glucose transport and supports endocrine homeostasis.",
+    target: "Target: Carb Handling & Hormonal Health",
+  },
+  {
+    name: "EGCG & Green Tea",
     tag: "Thermogenetic Catalyst",
     badgeColor: "bg-amber-100 text-amber-700 border-amber-200",
     description:
-      "Inhibits COMT enzymes to prolong norepinephrine signaling. When paired with morning coffee, it accelerates resting calorie expenditure and fat oxidation.",
-    target: "Target: Resting Metabolic Rate & Lipolysis",
+      "Inhibits catechol-O-methyltransferase (COMT) to prolong norepinephrine signaling, encouraging resting energy expenditure and lipid oxidation.",
+    target: "Target: Basal Rate & Fat Breakdown",
   },
   {
-    name: "Chlorogenic Acid",
+    name: "Sphaeranthus & Mangosteen",
     tag: "Lipid Modulation",
     badgeColor: "bg-purple-100 text-purple-700 border-purple-200",
     description:
-      "A potent bioactive compound found in unroasted coffee beans that slows glucose release into the bloodstream and optimizes dietary carbohydrate management.",
-    target: "Target: Carbohydrate Absorption & Storage",
-  },
-  {
-    name: "Berberine & AMPK Activators",
-    tag: "Metabolic Master Switch",
-    badgeColor: "bg-blue-100 text-blue-700 border-blue-200",
-    description:
-      "Activates cellular AMPK pathways to enhance insulin sensitivity, maintain stable fasting glucose, and reduce mid-day cravings and sugar spikes.",
-    target: "Target: Glucose Clearance & Appetite Control",
-  },
-  {
-    name: "L-Theanine & Coffee Synergy",
-    tag: "Smooth Energy Modulator",
-    badgeColor: "bg-emerald-100 text-emerald-700 border-emerald-200",
-    description:
-      "Smooths out caffeine absorption to eliminate jitters and cortisol spikes, encouraging calm, steady mental focus and sustained daily metabolic output.",
-    target: "Target: Adrenal Balance & Cortisol Control",
+      "Standardized botanical synergy that inhibits adipogenesis while enhancing lipolysis in mature fat cells according to recent metabolic trials.",
+    target: "Target: Adipose Signaling & Body Composition",
   },
 ]
 
@@ -63,7 +63,6 @@ export default function HomePage() {
           <DiagnosticTool />
         </div>
       </section>
-
       {/* Self-Contained Metabolic Intelligence Hub */}
       <section className="bg-slate-50 px-4 py-16 border-y border-slate-200/60">
         <div className="mx-auto max-w-6xl">
@@ -72,15 +71,14 @@ export default function HomePage() {
               Metabolic Compounds & Mechanisms
             </h2>
             <p className="mt-3 text-sm md:text-base text-slate-600">
-              Evidence-based nutritional pathways that influence glucose regulation, thermogenesis, and coffee-driven metabolic activation.
+              Evidence-based nutritional pathways that influence glucose regulation, mitochondrial efficiency, and metabolic flexibility.
             </p>
             {/* Micro Affiliate Disclaimer */}
             <p className="mt-3 text-[11px] leading-normal text-slate-400">
               <span className="font-semibold uppercase tracking-wider text-slate-500">Affiliate Disclosure:</span> Content is for educational purposes. We may receive compensation for partner recommendations or products linked across our site at no extra cost to you.
             </p>
           </div>
-
-          {/* Clean Informational Grid */}
+          {/* Clean Informational Grid (No Card Buttons) */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {METABOLIC_COMPOUNDS.map((compound) => (
               <div
@@ -100,7 +98,6 @@ export default function HomePage() {
                     {compound.description}
                   </p>
                 </div>
-                
                 <div className="mt-6 pt-3 border-t border-slate-100">
                   <p className="text-xs font-medium text-slate-500">
                     {compound.target}
@@ -109,8 +106,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-
-          {/* Standout Affiliate Call-to-Action */}
+          {/* Single Standout Affiliate Call-to-Action */}
           <div className="mt-12 text-center">
             <a
               href={AFFILIATE_OFFER_URL}
@@ -118,12 +114,11 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-blue-700 hover:scale-[1.02] transition-all"
             >
-              Turn Your Coffee Into a Fat-Burning Super Coffee with Metabo Drops →
+              Activate Your Coffee's Fat-Burning Potential →
             </a>
           </div>
         </div>
       </section>
-
       {/* Existing Library */}
       <ResourceLibrary />
     </main>
