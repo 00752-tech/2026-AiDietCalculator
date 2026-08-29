@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 
-const AFFILIATE_URL = "/recommend/berberine-patch"
+const AFFILIATE_URL = "/metabo-drops-official"
 
 interface AffiliateBridgeProps {
   headline?: string
@@ -33,14 +33,14 @@ export function AffiliateBridge({
           target="_blank"
           className="text-sm md:text-base whitespace-nowrap inline-flex items-center justify-center gap-2"
         >
-          <span>👉</span> Claim Your All-Day Berberine Satiety Patch →
+          <span>👉</span> Activate Your Coffee's Fat-Burning Potential →
         </a>
       </Button>
       <p className="mt-3 text-xs leading-snug text-[#0F1B2A]/50">
         Independent review. We may earn a referral fee, but your price stays identical.
       </p>
       <p className="mt-1 text-[11px] leading-snug text-[#0F1B2A]/40">
-        Statements have not been evaluated by the FDA. Plant-derived daily transdermal routine.
+        Statements have not been evaluated by the FDA. Thermogenic coffee drop protocol.
       </p>
     </div>
   )
