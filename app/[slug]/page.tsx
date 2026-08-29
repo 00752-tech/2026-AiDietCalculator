@@ -54,7 +54,7 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
   }
 
   const profile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  const trackingLink = `https://aidietcalculator.com/recommend/berberine-patch?utm_campaign=${slug}`;
+  const trackingLink = `https://aidietcalculator.com/recommend/catalyst?utm_campaign=metabolic-compounds-hub${slug}`;
 
   // Structured Data Injection Payload (E-E-A-T / YMYL Optimized)
   const jsonLd = {
