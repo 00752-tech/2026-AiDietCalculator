@@ -51,7 +51,7 @@ export function AffiliateBridge({
           Required Video Presentation
         </div>
         <p className="text-xs leading-snug text-white/80">
-          Watch this brief presentation in its entirety to learn how to trigger steady fat oxidation and activate exclusive <strong>$39 introductory pricing</strong>.
+          Watch this brief presentation in its entirety to learn how to trigger steady fat oxidation and activate exclusive <strong>$49 introductory pricing</strong>.
         </p>
       </div>
 
