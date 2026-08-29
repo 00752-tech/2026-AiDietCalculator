@@ -20,18 +20,23 @@ function VideoPreview({
   thumbnailAlt: string
   onClick: () => void
 }) {
+  const [imgFailed, setImgFailed] = useState(false)
+
   return (
     <button
       type="button"
       onClick={onClick}
-      className="group relative block w-full overflow-hidden rounded-2xl shadow-lg transition-shadow hover:shadow-xl"
       aria-label={thumbnailAlt}
+      className="group relative block aspect-video w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 shadow-lg transition-shadow hover:shadow-xl"
     >
-      <img
-        src={thumbnailSrc}
-        alt={thumbnailAlt}
-        className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
+      {!imgFailed && (
+        <img
+          src={thumbnailSrc || "/placeholder.svg"}
+          alt=""
+          onError={() => setImgFailed(true)}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      )}
       <div className="absolute inset-0 bg-black/25 transition-colors group-hover:bg-black/35" />
       <div className="absolute inset-0 flex items-center justify-center">
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-xl transition-transform duration-200 group-hover:scale-110 md:h-20 md:w-20">
