@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     "Calculate your daily calorie needs, BMI, protein intake, and macros instantly. Explore our expert-led metabolic health and microbiome science database.",
 }
 
-// Replace with your preferred affiliate recommendation endpoint or tracking URL
 const AFFILIATE_OFFER_URL = "https://aidietcalculator.com/recommend/catalyst?utm_campaign=metabolic-compounds-hub"
 
 const METABOLIC_COMPOUNDS = [
@@ -48,15 +47,42 @@ const METABOLIC_COMPOUNDS = [
 ]
 
 export default function HomePage() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://aidietcalculator.com"
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AI Diet Calculator",
+      "url": baseUrl,
+      "description": "Metabolic Diagnostic Hub and personalized nutrition calculators.",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Why Tracking Alone Doesn't Stop the Hunger Spike",
+      "description": "Learn why calorie tracking alone fails to control appetite spikes and how metabolic drivers regulate daily calorie expenditure.",
+      "thumbnailUrl": [`${baseUrl}/video-thumbnail.jpg`],
+      "uploadDate": "2026-08-29T00:00:00Z",
+      "embedUrl": "https://player.vimeo.com/video/1222329099?h=6d3c8473df",
+    },
+  ]
+
   return (
     <main className="min-h-screen bg-background scroll-smooth">
+      {/* Search Engine Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Diagnostic Section */}
       <section id="diagnostic" className="bg-background px-4 py-12 md:py-20">
         <div className="mx-auto max-w-2xl">
           <div className="mb-12 text-center">
             <h1 className="mb-4 font-serif text-4xl font-light leading-tight text-[#0E7C7B] md:text-5xl">
-  Your Metabolic Diagnostic
-</h1>
+              Your Metabolic Diagnostic
+            </h1>
             <p className="text-lg text-secondary">
               Real numbers for your body. Built on the Mifflin-St Jeor formula — the same protocol behind clinical metabolic testing.
             </p>
@@ -78,8 +104,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 text-center max-w-2xl mx-auto">
             <h2 className="font-serif text-3xl font-normal text-[#0E7C7B]">
-  Metabolic Compounds & Mechanisms
-</h2>
+              Metabolic Compounds & Mechanisms
+            </h2>
             <p className="mt-3 text-sm md:text-base text-slate-600">
               Evidence-based nutritional pathways that influence glucose regulation, mitochondrial efficiency, and metabolic flexibility.
             </p>
@@ -89,7 +115,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Clean Informational Grid (No Card Buttons) */}
+          {/* Clean Informational Grid */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {METABOLIC_COMPOUNDS.map((compound) => (
               <div
@@ -118,7 +144,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Single Standout Affiliate Call-to-Action */}
+          {/* Standout Affiliate Call-to-Action */}
           <div className="mt-12 text-center">
             <a
               href={AFFILIATE_OFFER_URL}
