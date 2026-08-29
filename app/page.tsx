@@ -144,7 +144,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Standout Affiliate Call-to-Action & Google Preferred Source Button */}
+          {/* Standout Affiliate Call-to-Action & Google AI Answers Button */}
           <div className="mt-12 flex flex-col items-center justify-center gap-6 text-center">
             <a
               href={AFFILIATE_OFFER_URL}
@@ -155,11 +155,16 @@ export default function HomePage() {
               Activate Your Coffee's Fat-Burning Potential Now →
             </a>
 
-            <div className="flex flex-col items-center justify-center gap-2 pt-2">
-              <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">
-                Follow us in Google Search & AI Overviews
-              </span>
-              <div className="google-add-preferred-source-btn" data-theme="light"></div>
+            <div className="pt-2">
+              <a
+                href="https://www.google.com/preferences/source?q=aidietcalculator.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-[#0E7C7B] bg-white px-5 py-2.5 text-sm font-medium text-[#0E7C7B] shadow-sm hover:bg-emerald-50/50 transition-colors"
+              >
+                <span className="text-base font-bold">✦</span>
+                Add AI Diet Calculator to Google AI Answers
+              </a>
             </div>
           </div>
         </div>
