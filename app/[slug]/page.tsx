@@ -144,7 +144,7 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
               fontSize: '15px'
             }}
           >
-            👉 Claim Your All-Day Berberine Satiety Patch Now →
+            👉 Recommended Next Step For Your Results →
           </a>
         </div>
 
