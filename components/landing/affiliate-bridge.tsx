@@ -10,7 +10,7 @@ interface AffiliateBridgeProps {
 
 export function AffiliateBridge({
   headline,
-  body = "Your baseline numbers show your mathematical caloric threshold, but tracking macros alone can't stop defensive hunger spikes. Berberine activates your body's natural satiety pathways to curb cravings and ignite steady fat oxidation. Skip the heavy pills and injections—this needle-free, plant-derived transdermal patch delivers continuous, slow-release metabolic support all day long.",
+  body = "Your baseline numbers show your mathematical caloric threshold, but tracking macros alone can't stop defensive hunger spikes. Adding targeted thermogenic catalysts to your morning coffee accelerates lipolysis and sustains daily calorie burn without restrictive dieting.",
   result,
 }: AffiliateBridgeProps) {
   const defaultHeadline = headline || (result ? `Metabolic Target: ${result} kcal | Lock In Cravings` : "Calorie tracking is only half the equation.")
@@ -21,17 +21,29 @@ export function AffiliateBridge({
         ✦ Recommended Next Step For Your Results
       </p>
       <h3 className="mb-3 font-serif text-2xl text-[#0F1B2A]">{defaultHeadline}</h3>
-      <p className="mx-auto mb-6 max-w-sm text-base leading-relaxed text-[#0F1B2A]/70">{body}</p>
+      <p className="mx-auto mb-4 max-w-sm text-base leading-relaxed text-[#0F1B2A]/70">{body}</p>
+
+      {/* VSL Pre-Frame Callout */}
+      <div className="mx-auto mb-5 max-w-sm rounded-xl border border-[#0F1B2A] bg-[#0F1B2A] p-4 text-left shadow-md">
+        <div className="mb-1.5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#F59E0B]">
+          <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-[#F59E0B]" />
+          Required Video Presentation
+        </div>
+        <p className="text-xs leading-snug text-white/80">
+          Watch this brief presentation in its entirety to learn how to trigger steady fat oxidation and activate exclusive <strong>$39 introductory pricing</strong>.
+        </p>
+      </div>
+
       <Button
         asChild
         size="lg"
-        className="h-auto w-full rounded-full bg-[#D64545] py-4 font-semibold text-white hover:bg-[#D64545]/90 shadow-md transition-all"
+        className="h-auto w-full rounded-full bg-[#D64545] py-4 font-semibold text-white shadow-md transition-all hover:bg-[#D64545]/90"
       >
         <a 
           href={AFFILIATE_URL} 
           rel="sponsored noopener" 
           target="_blank"
-          className="text-sm md:text-base whitespace-nowrap inline-flex items-center justify-center gap-2"
+          className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm md:text-base"
         >
           <span>👉</span> Activate Your Coffee's Fat-Burning Potential →
         </a>
