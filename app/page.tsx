@@ -118,7 +118,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-blue-700 hover:scale-[1.02] transition-all"
             >
-              Get the Biome® Protocol Now →
+              Activate Your Coffee's Fat-Burning Potential Now →
             </a>
           </div>
         </div>
