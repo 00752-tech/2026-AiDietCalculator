@@ -20,22 +20,38 @@ function VideoPreview({
   thumbnailAlt: string
   onClick: () => void
 }) {
-  const [imgFailed, setImgFailed] = useState(false)
+  const [loadedSrc, setLoadedSrc] = useState<string | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    const probe = new window.Image()
+    probe.onload = () => {
+      if (!cancelled) setLoadedSrc(thumbnailSrc)
+    }
+    probe.onerror = () => {
+      if (!cancelled) setLoadedSrc(null)
+    }
+    probe.src = thumbnailSrc
+
+    return () => {
+      cancelled = true
+    }
+  }, [thumbnailSrc])
 
   return (
     <button
       type="button"
       onClick={onClick}
       aria-label={thumbnailAlt}
-      className="group relative block aspect-video w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 shadow-lg transition-shadow hover:shadow-xl"
+      className="group relative block aspect-video w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 bg-cover bg-center shadow-lg transition-shadow hover:shadow-xl"
+      style={
+        loadedSrc
+          ? { backgroundImage: `url(${loadedSrc})` }
+          : undefined
+      }
     >
-      {!imgFailed && (
-        <img
-          src={thumbnailSrc || "/placeholder.svg"}
-          alt=""
-          onError={() => setImgFailed(true)}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+      {loadedSrc && (
+        <div className="absolute inset-0 scale-100 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" />
       )}
       <div className="absolute inset-0 bg-black/25 transition-colors group-hover:bg-black/35" />
       <div className="absolute inset-0 flex items-center justify-center">
