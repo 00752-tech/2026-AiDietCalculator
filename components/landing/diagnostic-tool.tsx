@@ -86,7 +86,7 @@ export function DiagnosticTool() {
     <div className="mx-auto max-w-xl">
       <div className="rounded-2xl border border-[#0F1B2A]/10 bg-white p-6 shadow-sm md:p-10">
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="font-serif text-2xl text-[#0F1B2A]">Metabolic Diagnostic</h2>
+<h2 className="font-serif text-2xl text-[#0E7C7B]">Metabolic Diagnostic</h2>
           <span className="rounded-full bg-[#0E7C7B]/10 px-3 py-1 font-mono text-[10px] uppercase tracking-wide text-[#0E7C7B]">
             Step 1 of 1
           </span>
