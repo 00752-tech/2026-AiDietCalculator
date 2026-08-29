@@ -144,8 +144,8 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Standout Affiliate Call-to-Action */}
-          <div className="mt-12 text-center">
+          {/* Standout Affiliate Call-to-Action & Google Preferred Source Button */}
+          <div className="mt-12 flex flex-col items-center justify-center gap-6 text-center">
             <a
               href={AFFILIATE_OFFER_URL}
               target="_blank"
@@ -154,6 +154,13 @@ export default function HomePage() {
             >
               Activate Your Coffee's Fat-Burning Potential Now →
             </a>
+
+            <div className="flex flex-col items-center justify-center gap-2 pt-2">
+              <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">
+                Follow us in Google Search & AI Overviews
+              </span>
+              <div className="google-add-preferred-source-btn" data-theme="light"></div>
+            </div>
           </div>
         </div>
       </section>
