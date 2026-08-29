@@ -15,7 +15,7 @@ export function ResourceLibrary() {
   return (
     <section className="border-t border-[#0F1B2A]/10 bg-white px-4 py-16">
       <div className="mx-auto max-w-4xl">
-        <p className="mb-1 font-mono text-xs uppercase tracking-[0.2em] text-[#0F1B2A]/40">
+        <p className="mb-1 font-mono text-xs uppercase tracking-[0.2em] text-[#0E7C7B]">
           Resource library
         </p>
         <h2 className="mb-8 font-serif text-2xl text-[#0F1B2A]">Individual calculators</h2>
