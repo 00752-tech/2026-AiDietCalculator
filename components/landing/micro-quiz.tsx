@@ -12,14 +12,16 @@ export function MicroQuiz() {
   const [answers, setAnswers] = useState({ goal: "", activity: "", age: "" })
 
   const handleSelection = (field: keyof typeof answers, value: string) => {
-    setAnswers((prev) => ({ ...prev, [field]: value }))
+    // 1. Capture the newest answer synchronously
+    const updatedAnswers = { ...answers, [field]: value }
+    setAnswers(updatedAnswers)
     
     if (step < 3) {
-      setTimeout(() => setStep((prev) => (prev + 1) as QuizStep), 300) // Slight delay for visual feedback
+      setTimeout(() => setStep((prev) => (prev + 1) as QuizStep), 300)
     } else {
-      // Final step completion - Redirect to the main calculator with pre-filled intent or directly to VSL
       trackConversionEvent("quiz_completed")
-      router.push(`/?goal=${value}`) // Optionally pass query params to pre-fill the main form
+      // 2. Pass the explicitly saved goal, not the 'value' of the final click
+      router.push(`/?goal=${encodeURIComponent(updatedAnswers.goal)}`)
     }
   }
 
