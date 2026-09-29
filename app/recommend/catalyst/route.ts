@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 
-const DESTINATION_URL = "https://dfc5bpb5l11z9n0fjrp8s9084k.hop.clickbank.net/?&traffic_source=ai_diet"
+const DESTINATION_URL = "https://0fe1au6se6bldvc1xldnlo8r7r.hop.clickbank.net/?&traffic_source=ai_calc"
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
