@@ -1,4 +1,3 @@
-```tsx
 import type { Metadata } from "next"
 import { DiagnosticTool } from "@/components/landing/diagnostic-tool"
 import { ResourceLibrary } from "@/components/landing/resource-library"
@@ -12,6 +11,30 @@ export const metadata: Metadata = {
 
 const AFFILIATE_OFFER_URL =
   "https://gluco6.com/?hop=zzzzz&hopId=79ed6669-36b3-473a-b375-6b4b2ac704d2"
+
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || "https://aidietcalculator.com"
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "AI Diet Calculator",
+    url: baseUrl,
+    description:
+      "Metabolic Diagnostic Hub and personalized nutrition calculators.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Why Accurate Calorie Tracking Is Only Part of the Equation",
+    description:
+      "Learn why knowing your calorie and macro targets is only part of reaching your goals, and explore the role of blood sugar and metabolic support.",
+    thumbnailUrl: [`${baseUrl}/video-thumbnail.jpg`],
+    uploadDate: "2026-08-29T00:00:00Z",
+    embedUrl: "https://player.vimeo.com/video/1222329099",
+  },
+]
 
 const METABOLIC_COMPOUNDS = [
   {
@@ -49,30 +72,6 @@ const METABOLIC_COMPOUNDS = [
 ]
 
 export default function HomePage() {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL || "https://aidietcalculator.com"
-
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "AI Diet Calculator",
-      "url": baseUrl,
-      "description":
-        "Metabolic Diagnostic Hub and personalized nutrition calculators.",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": "Why Accurate Calorie Tracking Is Only Part of the Equation",
-      "description":
-        "Learn why knowing your calorie and macro targets is only part of reaching your goals, and explore the role of blood sugar and metabolic support.",
-      "thumbnailUrl": [`${baseUrl}/video-thumbnail.jpg`],
-      "uploadDate": "2026-08-29T00:00:00Z",
-      "embedUrl": "https://player.vimeo.com/video/1222329099",
-    },
-  ]
-
   return (
     <main className="min-h-screen bg-background scroll-smooth">
       {/* Search Engine Schema Injection */}
@@ -195,4 +194,3 @@ export default function HomePage() {
     </main>
   )
 }
-```
