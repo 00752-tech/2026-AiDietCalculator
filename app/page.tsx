@@ -1,3 +1,4 @@
+```tsx
 import type { Metadata } from "next"
 import { DiagnosticTool } from "@/components/landing/diagnostic-tool"
 import { ResourceLibrary } from "@/components/landing/resource-library"
@@ -6,48 +7,50 @@ import { VideoLightbox } from "@/components/landing/video-lightbox"
 export const metadata: Metadata = {
   title: "AI Diet Calculator — Metabolic Diagnostic Hub",
   description:
-    "Calculate your daily calorie needs, BMI, protein intake, and macros instantly. Explore our expert-led metabolic health and microbiome science database.",
+    "Calculate your daily calorie needs, BMI, protein intake, and macros instantly. Explore evidence-based metabolic health, blood sugar, and nutrition insights.",
 }
 
-const AFFILIATE_OFFER_URL = "https://aidietcalculator.com/recommend/catalyst?utm_campaign=metabolic-compounds-hub"
+const AFFILIATE_OFFER_URL =
+  "https://gluco6.com/?hop=zzzzz&hopId=79ed6669-36b3-473a-b375-6b4b2ac704d2"
 
 const METABOLIC_COMPOUNDS = [
   {
-    name: "EGCG & Green Tea Extract",
-    tag: "Thermogenetic Catalyst",
+    name: "Sukre",
+    tag: "Glucose Absorption Support",
     badgeColor: "bg-amber-100 text-amber-700 border-amber-200",
     description:
-      "Inhibits COMT enzymes to prolong norepinephrine signaling. When paired with morning coffee, it accelerates resting calorie expenditure and fat oxidation.",
-    target: "Target: Resting Metabolic Rate & Lipolysis",
+      "A proprietary ingredient featured in Gluco6 and designed to support healthy glucose absorption and normal blood sugar levels.",
+    target: "Target: Glucose Absorption & Blood Sugar Support",
   },
   {
-    name: "Chlorogenic Acid",
-    tag: "Lipid Modulation",
+    name: "TeaCrine",
+    tag: "Metabolic & Energy Support",
     badgeColor: "bg-purple-100 text-purple-700 border-purple-200",
     description:
-      "A potent bioactive compound found in unroasted coffee beans that slows glucose release into the bloodstream and optimizes dietary carbohydrate management.",
-    target: "Target: Carbohydrate Absorption & Storage",
+      "A branded extract derived from tea that Gluco6 includes to support healthy glucose metabolism, mental energy, focus, and overall metabolic function.",
+    target: "Target: Glucose Metabolism & Daily Energy",
   },
   {
-    name: "Berberine & AMPK Activators",
-    tag: "Metabolic Master Switch",
+    name: "Gymnema Sylvestre",
+    tag: "Blood Sugar Support",
     badgeColor: "bg-blue-100 text-blue-700 border-blue-200",
     description:
-      "Activates cellular AMPK pathways to enhance insulin sensitivity, maintain stable fasting glucose, and reduce mid-day cravings and sugar spikes.",
-    target: "Target: Glucose Clearance & Appetite Control",
+      "A botanical traditionally used in metabolic health formulas and included in Gluco6 to support healthy glucose levels and help manage sugar cravings.",
+    target: "Target: Glucose Regulation & Craving Support",
   },
   {
-    name: "L-Theanine & Coffee Synergy",
-    tag: "Smooth Energy Modulator",
+    name: "Chromium",
+    tag: "Insulin Sensitivity Support",
     badgeColor: "bg-emerald-100 text-emerald-700 border-emerald-200",
     description:
-      "Smooths out caffeine absorption to eliminate jitters and cortisol spikes, encouraging calm, steady mental focus and sustained daily metabolic output.",
-    target: "Target: Adrenal Balance & Cortisol Control",
+      "An essential trace mineral included in Gluco6 to support normal insulin function and healthy blood sugar levels.",
+    target: "Target: Insulin Function & Blood Sugar Balance",
   },
 ]
 
 export default function HomePage() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://aidietcalculator.com"
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://aidietcalculator.com"
 
   const jsonLd = [
     {
@@ -55,16 +58,18 @@ export default function HomePage() {
       "@type": "WebSite",
       "name": "AI Diet Calculator",
       "url": baseUrl,
-      "description": "Metabolic Diagnostic Hub and personalized nutrition calculators.",
+      "description":
+        "Metabolic Diagnostic Hub and personalized nutrition calculators.",
     },
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
-      "name": "Why Tracking Alone Doesn't Stop the Hunger Spike",
-      "description": "Learn why calorie tracking alone fails to control appetite spikes and how metabolic drivers regulate daily calorie expenditure.",
+      "name": "Why Accurate Calorie Tracking Is Only Part of the Equation",
+      "description":
+        "Learn why knowing your calorie and macro targets is only part of reaching your goals, and explore the role of blood sugar and metabolic support.",
       "thumbnailUrl": [`${baseUrl}/video-thumbnail.jpg`],
       "uploadDate": "2026-08-29T00:00:00Z",
-      "embedUrl": "https://player.vimeo.com/video/1222329099?h=6d3c8473df",
+      "embedUrl": "https://player.vimeo.com/video/1222329099",
     },
   ]
 
@@ -84,17 +89,20 @@ export default function HomePage() {
               Your Metabolic Diagnostic
             </h1>
             <p className="text-lg text-secondary">
-              Real numbers for your body. Built on the Mifflin-St Jeor formula — the same protocol behind clinical metabolic testing.
+              Real numbers for your body. Built on the Mifflin-St Jeor formula
+              — the same protocol behind clinical metabolic testing.
             </p>
           </div>
+
           <div className="mb-10">
             <VideoLightbox
               vimeoId="1222329099"
               vimeoHash="6d3c8473df"
               thumbnailSrc="/video-thumbnail.jpg"
-              thumbnailAlt="Watch: why tracking alone doesn't stop the hunger spike"
+              thumbnailAlt="Watch: why accurate calorie tracking is only part of the equation"
             />
           </div>
+
           <DiagnosticTool />
         </div>
       </section>
@@ -104,14 +112,23 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 text-center max-w-2xl mx-auto">
             <h2 className="font-serif text-3xl font-normal text-[#0E7C7B]">
-              Metabolic Compounds & Mechanisms
+              Metabolic Compounds &amp; Mechanisms
             </h2>
+
             <p className="mt-3 text-sm md:text-base text-slate-600">
-              Evidence-based nutritional pathways that influence glucose regulation, mitochondrial efficiency, and metabolic flexibility.
+              Explore the ingredients and metabolic pathways featured in
+              Gluco6, including compounds associated with glucose regulation,
+              blood sugar balance, and metabolic support.
             </p>
+
             {/* Micro Affiliate Disclaimer */}
             <p className="mt-3 text-[11px] leading-normal text-slate-400">
-              <span className="font-semibold uppercase tracking-wider text-slate-500">Affiliate Disclosure:</span> Content is for educational purposes. We may receive compensation for partner recommendations or products linked across our site at no extra cost to you.
+              <span className="font-semibold uppercase tracking-wider text-slate-500">
+                Affiliate Disclosure:
+              </span>{" "}
+              Content is for educational purposes. We may receive compensation
+              for partner recommendations or products linked across our site
+              at no extra cost to you.
             </p>
           </div>
 
@@ -128,13 +145,16 @@ export default function HomePage() {
                   >
                     {compound.tag}
                   </span>
+
                   <h3 className="text-xl font-semibold text-slate-900 font-serif">
                     {compound.name}
                   </h3>
+
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">
                     {compound.description}
                   </p>
                 </div>
+
                 <div className="mt-6 pt-3 border-t border-slate-100">
                   <p className="text-xs font-medium text-slate-500">
                     {compound.target}
@@ -152,7 +172,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-blue-700 hover:scale-[1.02] transition-all"
             >
-              Activate Your Coffee's Fat-Burning Potential Now →
+              Explore Gluco6 Metabolic Support →
             </a>
 
             <div className="pt-2">
@@ -175,3 +195,4 @@ export default function HomePage() {
     </main>
   )
 }
+```
