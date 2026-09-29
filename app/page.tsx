@@ -34,6 +34,21 @@ const jsonLd = [
     uploadDate: "2026-08-29T00:00:00Z",
     embedUrl: "https://player.vimeo.com/video/1222329099",
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "AI Diet Calculator",
+    url: baseUrl,
+    applicationCategory: "HealthApplication",
+    operatingSystem: "Web",
+    description:
+      "Calculate your daily calorie needs, BMI, protein intake, and macros instantly.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  },
 ]
 
 const METABOLIC_COMPOUNDS = [
