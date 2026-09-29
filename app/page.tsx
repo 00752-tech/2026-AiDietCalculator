@@ -9,11 +9,10 @@ export const metadata: Metadata = {
     "Calculate your daily calorie needs, BMI, protein intake, and macros instantly. Explore evidence-based metabolic health, blood sugar, and nutrition insights.",
 }
 
-const AFFILIATE_OFFER_URL =
-  "https://gluco6.com/?hop=zzzzz&hopId=79ed6669-36b3-473a-b375-6b4b2ac704d2"
-
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL || "https://aidietcalculator.com"
+
+const AFFILIATE_OFFER_URL = `${baseUrl}/go/gluco6`
 
 const jsonLd = [
   {
@@ -32,7 +31,7 @@ const jsonLd = [
       "Learn why knowing your calorie and macro targets is only part of reaching your goals, and explore the role of blood sugar and metabolic support.",
     thumbnailUrl: [`${baseUrl}/video-thumbnail.jpg`],
     uploadDate: "2026-08-29T00:00:00Z",
-    embedUrl: "https://player.vimeo.com/video/1222329099",
+    embedUrl: "https://player.vimeo.com/video/1231445144",
   },
   {
     "@context": "https://schema.org",
@@ -110,7 +109,7 @@ export default function HomePage() {
 
           <div className="mb-10">
             <VideoLightbox
-              vimeoId="1222329099"
+              vimeoId="1231445144"
               vimeoHash="6d3c8473df"
               thumbnailSrc="/video-thumbnail.jpg"
               thumbnailAlt="Watch: why accurate calorie tracking is only part of the equation"
