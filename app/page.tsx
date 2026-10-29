@@ -180,13 +180,13 @@ export default function HomePage() {
           {/* Standout Affiliate Call-to-Action & Google AI Answers Button */}
           <div className="mt-12 flex flex-col items-center justify-center gap-6 text-center">
             <a
-              href={AFFILIATE_OFFER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-#0E7C7B hover:scale-[1.02] transition-all"
-            >
-              Discover Gluco6 & See Today's Offer →
-            </a>
+  href={AFFILIATE_OFFER_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center rounded-xl bg-[#047857] px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-[#065F46] hover:scale-[1.02] transition-all"
+>
+  Discover Gluco6 & See Today's Offer →
+</a>
 
             <div className="pt-2">
               <a
