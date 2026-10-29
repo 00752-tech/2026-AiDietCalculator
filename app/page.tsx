@@ -185,7 +185,7 @@ export default function HomePage() {
   rel="noopener noreferrer"
   className="inline-flex items-center justify-center rounded-xl bg-[#047857] px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-[#065F46] hover:scale-[1.02] transition-all"
 >
-  Discover Gluco6 & See Today's Offer →
+  Explore Gluco6 for Blood Sugar Support →
 </a>
 
             <div className="pt-2">
