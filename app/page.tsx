@@ -31,7 +31,7 @@ const jsonLd = [
       "Learn why knowing your calorie and macro targets is only part of reaching your goals, and explore the role of blood sugar and metabolic support.",
     thumbnailUrl: [`${baseUrl}/video-thumbnail.jpeg`],
     uploadDate: "2026-08-29T00:00:00Z",
-    embedUrl: "https://player.vimeo.com/video/1240968147",
+    embedUrl: "https://player.vimeo.com/video/1241017019",
   },
   {
     "@context": "https://schema.org",
@@ -109,7 +109,7 @@ export default function HomePage() {
 
           <div className="mb-10">
             <VideoLightbox
-              vimeoId="1240968147"
+              vimeoId="1241017019"
               vimeoHash="6d3c8473df"
               thumbnailSrc="/video-thumbnail.jpeg"
               thumbnailAlt="Watch: why accurate calorie tracking is only part of the equation"
