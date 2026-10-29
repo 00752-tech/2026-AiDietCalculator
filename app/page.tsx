@@ -183,9 +183,9 @@ export default function HomePage() {
               href={AFFILIATE_OFFER_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-blue-700 hover:scale-[1.02] transition-all"
+              className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-#0E7C7B hover:scale-[1.02] transition-all"
             >
-              Explore Gluco6 Metabolic Support →
+              Discover Gluco6 & See Today's Offer →
             </a>
 
             <div className="pt-2">
