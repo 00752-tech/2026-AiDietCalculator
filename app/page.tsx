@@ -31,7 +31,7 @@ const jsonLd = [
       "Learn why knowing your calorie and macro targets is only part of reaching your goals, and explore the role of blood sugar and metabolic support.",
     thumbnailUrl: [`${baseUrl}/video-thumbnail.jpg`],
     uploadDate: "2026-08-29T00:00:00Z",
-    embedUrl: "https://player.vimeo.com/video/1231445144",
+    embedUrl: "https://player.vimeo.com/video/1240968147",
   },
   {
     "@context": "https://schema.org",
