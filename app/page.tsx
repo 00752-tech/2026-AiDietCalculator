@@ -109,7 +109,7 @@ export default function HomePage() {
 
           <div className="mb-10">
             <VideoLightbox
-              vimeoId="1231445144"
+              vimeoId="1240968147"
               vimeoHash="6d3c8473df"
               thumbnailSrc="/video-thumbnail.jpg"
               thumbnailAlt="Watch: why accurate calorie tracking is only part of the equation"
