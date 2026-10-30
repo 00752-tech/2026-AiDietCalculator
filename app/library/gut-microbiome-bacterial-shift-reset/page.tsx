@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/gut-microbiome-bacterial-shift-reset' },
   title: 'Gut Microbiome Bacterial Shift Metabolic Reset | Clinical Insights',
   description: 'Learn how a targeted gut microbiome bacterial shift protocol rebalances your enteric ecosystem, favors lean-phenotype strains, and shatters metabolic plateaus.',
 };

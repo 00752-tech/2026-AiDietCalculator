@@ -4,6 +4,7 @@ import { BmrCalculatorForm } from "@/components/tools/bmr-calculator-form"
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/bmr-calculator' },
   title: "BMR Calculator: AI Metabolic Rate Estimator",
   description:
     "Discover your Basal Metabolic Rate (BMR) with our AI calculator. Understand your body energy needs to lose weight or build muscle effectively.",

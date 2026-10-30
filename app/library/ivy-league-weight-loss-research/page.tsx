@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/ivy-league-weight-loss-research' },
   title: 'Ivy League Weight Loss Research Summary: Clinical Insights',
   description: 'Clinical weight loss research summary on gut-microbiome axis, metabolic homeostasis, and GLP-1 signaling pathways.',
 };

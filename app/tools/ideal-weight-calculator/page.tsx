@@ -4,6 +4,7 @@ import { IdealWeightCalculatorForm } from "@/components/tools/ideal-weight-calcu
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/ideal-weight-calculator' },
   title: "Ideal Weight Calculator: AI-Driven Health Insights",
   description:
     "Calculate your ideal weight range with our AI-driven tool. Get health-focused metrics based on your height and sex.",

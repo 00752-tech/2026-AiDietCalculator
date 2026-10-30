@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/microbiome-brain-axis-craving-suppression' },
   title: 'Microbiome-Brain Axis and Craving Suppression | Clinical Insights',
   description: 'Understanding how gut-brain communication regulates appetite, neurotransmitters, and craving suppression.',
 };

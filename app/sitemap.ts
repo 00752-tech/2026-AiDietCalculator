@@ -41,21 +41,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticAppRoutes = getAppRoutes(appDir)
   const sitemapEntries: MetadataRoute.Sitemap = staticAppRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
     changeFrequency: route === '' ? 'daily' : 'weekly',
     priority: route === '' ? 1.0 : 0.8,
   }))
 
-  // Add non-page static text files
-  const textFiles = ['/llms.txt', '/llms-full.txt']
-  textFiles.forEach((file) => {
-    sitemapEntries.push({
-      url: `${baseUrl}${file}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    })
-  })
 
   // 2. Programmatic Ingestion Layer (Niches)
   const baseDir = path.join(process.cwd(), 'content', 'niches')
@@ -65,11 +54,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .filter((file) => file.endsWith('.json'))
       .forEach((file) => {
         const slug = file.replace('.json', '')
-        const filePath = path.join(baseDir, file)
-        const stats = fs.statSync(filePath)
         sitemapEntries.push({
           url: `${baseUrl}/${slug}`,
-          lastModified: stats.mtime,
           changeFrequency: 'weekly',
           priority: 0.7,
         })
@@ -86,7 +72,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     folders.forEach((slug) => {
       sitemapEntries.push({
         url: `${baseUrl}/library/${slug}`,
-        lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.8,
       })

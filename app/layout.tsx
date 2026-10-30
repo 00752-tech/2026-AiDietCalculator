@@ -21,6 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://aidietcalculator.com'),
   title: 'AI Diet Planner & Metabolic Diagnostic Tool',
   description:
     'Get personalized AI-driven diet plans and metabolic insights. Stop guessing your nutritional needs and start achieving your health goals today.',
@@ -52,13 +53,13 @@ export const metadata: Metadata = {
         type: 'image/png',
       },
       {
-        url: '/favicon-192x192.png',
-        sizes: '192x192',
+        url: '/favicon-48x48.png',
+        sizes: '48x48',
         type: 'image/png',
       },
       {
-        url: '/favicon-512x512.png',
-        sizes: '512x512',
+        url: '/favicon-96x96.png',
+        sizes: '96x96',
         type: 'image/png',
       },
     ],

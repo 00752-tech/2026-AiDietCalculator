@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/epoc-metabolic-acceleration-gut-health' },
   title: 'EPOC Metabolic Acceleration and Gut Health | Clinical Insights',
   description: 'Explore how gut health influences Excess Post-exercise Oxygen Consumption (EPOC), mitochondrial density, and metabolic acceleration.',
 };

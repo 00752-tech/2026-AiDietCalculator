@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/garcinia-mangostana-fat-oxidation' },
   title: 'Garcinia Mangostana Fat Oxidation Pathways | Clinical Insights',
   description: 'Analysis of α-mangostin, AMPK signaling, and lipid catabolism pathways in metabolic health.',
 };

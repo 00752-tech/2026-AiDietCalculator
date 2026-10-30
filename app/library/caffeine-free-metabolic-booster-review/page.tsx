@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/caffeine-free-metabolic-booster-review' },
   title: 'Best Natural Caffeine-Free Metabolic Booster: 2026 Review | Clinical Insights',
   description: 'An expert review of caffeine-free metabolic boosters, focusing on mitochondrial efficiency, adrenal integrity, and the Biome® protocol.',
 };

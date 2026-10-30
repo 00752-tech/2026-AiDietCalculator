@@ -5,6 +5,7 @@ import { ResourceLibrary } from "@/components/landing/resource-library"
 import { VideoLightbox } from "@/components/landing/video-lightbox"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/' },
   title: "AI Diet Calculator — Metabolic Diagnostic Hub",
   description:
     "Calculate your daily calorie needs, BMI, protein intake, and macros instantly. Explore evidence-based metabolic health, blood sugar, and nutrition insights.",

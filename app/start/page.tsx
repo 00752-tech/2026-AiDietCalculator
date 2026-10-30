@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { MicroQuiz } from "@/components/landing/micro-quiz"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/start' },
   title: "Metabolic Assessment | AI Diet Calculator",
   description: "Take the 30-second metabolic assessment to discover your body's optimal caloric threshold and targeted fat-loss protocol.",
 }

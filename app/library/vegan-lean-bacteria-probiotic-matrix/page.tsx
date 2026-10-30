@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/vegan-lean-bacteria-probiotic-matrix' },
   title: 'Vegan Lean Bacteria Probiotic Matrix | Clinical Insights',
   description: 'Optimize metabolic efficiency on plant-based diets with the Vegan Lean Bacteria Probiotic Matrix, designed for maximal fiber fermentation and nutrient bioavailability.',
 };

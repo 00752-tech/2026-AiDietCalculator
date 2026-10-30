@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/metabolic-search-trends-2026' },
   title: 'Niche Metabolic Compound Search Trends: 2026 Intelligence',
   description: 'Analysis of 2026 metabolic health search trends, focusing on high-intent mechanism-of-action inquiries and microbiome optimization.',
 };

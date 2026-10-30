@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/organic-sphaeranthus-indicus-purity' },
   title: 'Organic Sphaeranthus Indicus Purity Standard | Clinical Insights',
   description: 'A critical analysis of botanical integrity, organic certification, and purity standards in Sphaeranthus indicus metabolic supplements.',
 };

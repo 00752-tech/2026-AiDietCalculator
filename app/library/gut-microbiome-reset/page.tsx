@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/gut-microbiome-reset' },
   title: 'Gut Microbiome Bacterial Shift Metabolic Reset | Clinical Protocol',
   description: 'Evidence-based analysis of enteric ecosystem modulation and metabolic signaling pathways.',
 };

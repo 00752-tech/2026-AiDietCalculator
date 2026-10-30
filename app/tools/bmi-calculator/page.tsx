@@ -4,6 +4,7 @@ import { BmiCalculatorForm } from "@/components/tools/bmi-calculator-form"
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/bmi-calculator' },
   title: "BMI Calculator: AI-Powered Body Metrics",
   description:
     "Instantly calculate your BMI with our AI tool. Track your body metrics and stay on top of your fitness journey with data-driven accuracy.",

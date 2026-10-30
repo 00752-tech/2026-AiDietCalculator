@@ -4,6 +4,7 @@ import { ProteinCalculatorForm } from "@/components/tools/protein-calculator-for
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/protein-calculator' },
   title: "Protein Calculator: AI Macro Tracker",
   description:
     "Optimize your protein intake with our AI-powered calculator. Get precise daily targets to build muscle and achieve your fitness goals.",

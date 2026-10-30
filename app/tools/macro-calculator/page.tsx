@@ -4,6 +4,7 @@ import { MacroCalculatorForm } from "@/components/tools/macro-calculator-form"
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/macro-calculator' },
   title: "Macro Calculator: AI Nutrition & Fitness Planner",
   description:
     "Split your calories into protein, fat, and carbs with our AI macro calculator. Get custom nutritional targets to support your fitness journey.",

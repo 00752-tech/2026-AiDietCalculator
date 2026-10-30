@@ -2,6 +2,7 @@ import React from 'react';
 
 // Metadata for SEO
 export const metadata = {
+  alternates: { canonical: '/library/insulin-resistance-gut-bacteria-connection' },
   title: 'Insulin Resistance and Gut Bacteria Connection | Clinical Insights',
   description: 'Understanding how gut microbiome dysbiosis triggers insulin resistance, metabolic endotoxemia, and hormonal stalls.',
 };

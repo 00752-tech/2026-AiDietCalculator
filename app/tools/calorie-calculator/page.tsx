@@ -4,6 +4,7 @@ import { CalorieCalculatorForm } from "@/components/tools/calorie-calculator-for
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/calorie-calculator' },
   title: "Calorie Calculator: AI Daily Intake Planner",
   description:
     "Find your daily calorie needs with our AI calculator. Get precise, personalized targets for weight loss or maintenance based on your body metrics.",

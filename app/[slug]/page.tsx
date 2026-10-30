@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import ReactMarkdown from 'react-markdown';
 
 interface PageProps {
   params: Promise<{
@@ -13,6 +14,8 @@ interface PageProps {
 const getProfilePath = (slug: string) => 
   path.join(process.cwd(), 'content', 'niches', `${slug}.json`);
 
+const shortTopic = (title: string) => String(title).split(' | ')[0].trim();
+
 // 1. Dynamic Meta-Ingestion for SEO/AEO/GEO Dominance
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -21,8 +24,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!fs.existsSync(filePath)) return {};
 
   const fileData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  const topic = shortTopic(fileData.title);
+  const title = topic.length <= 38 ? `${topic} | AI Diet Calculator` : topic;
   return {
-    title: fileData.title,
+    title,
     description: fileData.description,
     robots: 'index, follow',
     alternates: {
@@ -54,13 +59,15 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
   }
 
   const profile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  const displayTitle = shortTopic(profile.title);
+  const body = String(profile.markdownBody).replace(/^\s*#\s+[^\n]*\n+/, '');
   const trackingLink = `https://aidietcalculator.com/recommend/catalyst?utm_campaign=metabolic-compounds-hub${slug}`;
 
   // Structured Data Injection Payload (E-E-A-T / YMYL Optimized)
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
-    'headline': profile.title,
+    'headline': displayTitle,
     'description': profile.description,
     'url': `https://aidietcalculator.com/${slug}`,
     'inLanguage': 'en-US',
@@ -75,11 +82,7 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
     },
     'author': {
       '@type': 'Organization',
-      'name': 'AIDietCalculator Clinical Data Team'
-    },
-    'reviewedBy': {
-      '@type': 'MedicalOrganization',
-      'name': 'Metabolic Research Advisory Board'
+      'name': 'AIDietCalculator'
     },
     'audience': {
       '@type': 'Patient',
@@ -116,6 +119,8 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
           </a>
         </header>
 
+        <h1 style={{ fontSize: '28px', lineHeight: 1.25, margin: '0 0 16px 0' }}>{displayTitle}</h1>
+
         {/* High-Converting Floating Direct-Response CTA Bridge */}
         <div style={{ 
           background: '#111', 
@@ -125,7 +130,7 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
           margin: '25px 0', 
           borderRadius: '5px' 
         }}>
-          <h3 style={{ margin: '0 0 10px 0', color: '#ff4d4d' }}>🚨 CRITICAL METABOLIC BREAKTHROUGH</h3>
+          <p style={{ margin: '0 0 10px 0', color: '#ff4d4d', fontWeight: 700, fontSize: '1.17em' }}>🚨 CRITICAL METABOLIC BREAKTHROUGH</p>
           <p style={{ fontSize: '14px', lineHeight: '1.5', margin: '0 0 15px 0' }}>
             Calculators only reveal your raw mathematical caloric limits. If defensive hunger spikes and metabolic plateaus keep stopping your progress, macro tracking alone isn't enough. Berberine activates key AMPK pathways to curb cravings and ignite fat oxidation. Skip the heavy pills and injections—this needle-free, plant-derived transdermal patch delivers continuous, slow-release satiety support all day long.
           </p>
@@ -149,8 +154,8 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
         </div>
 
         {/* Zero-Bloat Raw Semantic Body Stream */}
-        <div style={{ whiteSpace: 'pre-wrap', fontSize: '14px', lineHeight: '1.6', marginTop: '20px' }}>
-          {profile.markdownBody}
+        <div style={{ fontSize: '14px', lineHeight: '1.6', marginTop: '20px' }}>
+          <ReactMarkdown components={{ h1: ({ node, ...props }) => <h2 {...props} /> }}>{body}</ReactMarkdown>
         </div>
       </article>
     </main>
