@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next"
 import { DiagnosticTool } from "@/components/landing/diagnostic-tool"
 import { ResourceLibrary } from "@/components/landing/resource-library"
@@ -32,6 +33,15 @@ const jsonLd = [
     thumbnailUrl: [`${baseUrl}/video-thumbnail.jpeg`],
     uploadDate: "2026-08-29T00:00:00Z",
     embedUrl: "https://player.vimeo.com/video/1241017019",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Meet Gluco6: Ingredients and Metabolic Support",
+    description:
+      "Discover Gluco6, explore its featured ingredients, and learn about its formulation for healthy blood sugar and glucose metabolism support.",
+    thumbnailUrl: [`${baseUrl}/video-thumbnail-2.jpg`],
+    embedUrl: "https://player.vimeo.com/video/1241398244",
   },
   {
     "@context": "https://schema.org",
@@ -107,6 +117,7 @@ export default function HomePage() {
             </p>
           </div>
 
+          {/* Original Educational VSL */}
           <div className="mb-10">
             <VideoLightbox
               vimeoId="1241017019"
@@ -120,7 +131,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Self-Contained Metabolic Intelligence Hub */}
+      {/* Metabolic Compounds & Mechanisms */}
       <section className="bg-slate-50 px-4 py-16 border-y border-slate-200/60">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 text-center max-w-2xl mx-auto">
@@ -145,7 +156,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Clean Informational Grid */}
+          {/* Ingredient Grid */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {METABOLIC_COMPOUNDS.map((compound) => (
               <div
@@ -177,16 +188,42 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Standout Affiliate Call-to-Action & Google AI Answers Button */}
+          {/* New Cinematic Gluco6 Product Showcase */}
+          <div className="mx-auto mt-16 max-w-3xl">
+            <div className="mb-6 text-center">
+              <h2 className="font-serif text-3xl font-normal text-[#0E7C7B]">
+                Meet Gluco6
+              </h2>
+
+              <p className="mt-3 text-sm md:text-base text-slate-600">
+                Take a closer look at the formula, its featured ingredients,
+                and the daily supplement designed to support healthy blood
+                sugar and glucose metabolism.
+              </p>
+            </div>
+
+            <VideoLightbox
+              vimeoId="1241398244"
+              thumbnailSrc="/video-thumbnail-2.jpg"
+              thumbnailAlt="Watch the Gluco6 cinematic product showcase"
+            />
+
+            <p className="mt-3 text-center text-xs text-slate-400">
+              Review the product ingredients and details before deciding
+              whether Gluco6 is right for you.
+            </p>
+          </div>
+
+          {/* Affiliate CTA & Google AI Answers */}
           <div className="mt-12 flex flex-col items-center justify-center gap-6 text-center">
             <a
-  href={AFFILIATE_OFFER_URL}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center justify-center rounded-xl bg-[#047857] px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-[#065F46] hover:scale-[1.02] transition-all"
->
-  Explore Gluco6 for Blood Sugar Support →
-</a>
+              href={AFFILIATE_OFFER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl bg-[#047857] px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-[#065F46] hover:scale-[1.02] transition-all"
+            >
+              Explore Gluco6 for Blood Sugar Support →
+            </a>
 
             <div className="pt-2">
               <a
@@ -203,7 +240,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Existing Library */}
+      {/* Existing Resource Library */}
       <ResourceLibrary />
     </main>
   )
