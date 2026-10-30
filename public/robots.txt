@@ -36,9 +36,8 @@ Disallow: /.v0/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /api/
-Disallow: /*_buildManifest.js$
-Disallow: /*_ssgManifest.js$
-Disallow: /*_middlewareManifest.js$
+Disallow: /recommend/
+Disallow: /go/
 
 # MASTER SITEMAP INDEX
 Sitemap: https://aidietcalculator.com/sitemap.xml
