@@ -41,6 +41,7 @@ const jsonLd = [
     description:
       "Discover Gluco6, explore its featured ingredients, and learn about its formulation for healthy blood sugar and glucose metabolism support.",
     thumbnailUrl: [`${baseUrl}/video-thumbnail-2.jpg`],
+    uploadDate: "2026-10-30T00:00:00Z",
     embedUrl: "https://player.vimeo.com/video/1241398244",
   },
   {
@@ -112,8 +113,9 @@ export default function HomePage() {
               Your Metabolic Diagnostic
             </h1>
             <p className="text-lg text-secondary">
-              Real numbers for your body. Built on the Mifflin-St Jeor formula
-              — the same protocol behind clinical metabolic testing.
+              Real numbers for your body. Built on the Mifflin-St Jeor
+              equation, a widely used method for estimating resting energy
+              expenditure.
             </p>
           </div>
 
@@ -188,7 +190,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* New Cinematic Gluco6 Product Showcase */}
+          {/* Cinematic Gluco6 Product Showcase */}
           <div className="mx-auto mt-16 max-w-3xl">
             <div className="mb-6 text-center">
               <h2 className="font-serif text-3xl font-normal text-[#0E7C7B]">
