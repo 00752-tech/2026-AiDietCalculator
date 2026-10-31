@@ -9,6 +9,7 @@ interface VideoLightboxProps {
   vimeoHash?: string
   thumbnailSrc: string
   thumbnailAlt?: string
+  onOpen?: () => void
 }
 
 function VideoPreview({
@@ -156,12 +157,13 @@ export function VideoLightbox({
   vimeoHash,
   thumbnailSrc,
   thumbnailAlt = "Watch: why tracking alone doesn't stop the hunger spike",
+  onOpen,
 }: VideoLightboxProps) {
   const [open, setOpen] = useState(false)
 
   return (
     <>
-      <VideoPreview thumbnailSrc={thumbnailSrc} thumbnailAlt={thumbnailAlt} onClick={() => setOpen(true)} />
+      <VideoPreview thumbnailSrc={thumbnailSrc} thumbnailAlt={thumbnailAlt} onClick={() => { setOpen(true); onOpen?.() }} />
       <VideoModal open={open} onClose={() => setOpen(false)} vimeoId={vimeoId} vimeoHash={vimeoHash} />
     </>
   )

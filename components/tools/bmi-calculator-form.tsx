@@ -93,9 +93,7 @@ export function BmiCalculatorForm() {
           <p className="text-sm leading-relaxed text-[#0F1B2A]/60">
             BMI doesn&apos;t account for muscle mass or frame size — it&apos;s a starting point, not a diagnosis.
           </p>
-          <AffiliateBridge
-            result={result.value}
-          />
+          <AffiliateBridge calculator="bmi" />
           <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>

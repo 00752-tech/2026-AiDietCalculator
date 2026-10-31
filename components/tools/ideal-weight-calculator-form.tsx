@@ -101,10 +101,7 @@ export function IdealWeightCalculatorForm() {
             <p className="font-mono text-6xl font-light text-[#0F1B2A]">{result} {unitLabel}</p>
             <p className="mt-3 text-base leading-relaxed text-[#0F1B2A]/60">estimated ideal weight (Devine formula)</p>
           </div>
-          <AffiliateBridge 
-            headline={`Ideal Weight Target: ${result} ${unitLabel} | Lock In Cravings`}
-            result={`${result} ${unitLabel}`} 
-          />
+          <AffiliateBridge calculator="ideal-weight" />
           <button onClick={() => setResult(null)} className="text-base text-[#0F1B2A]/50 underline underline-offset-4">
             Recalculate
           </button>
