@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
+import { SiteHeader } from '@/components/site-header'
 
 const instrumentSerif = Instrument_Serif({
   weight: ['400'],
@@ -142,6 +143,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        <SiteHeader />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
