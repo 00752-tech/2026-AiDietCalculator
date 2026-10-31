@@ -154,11 +154,11 @@ export function MacroCalculatorForm() {
               <p className="mt-2 text-sm uppercase tracking-wide text-white/50">Protein</p>
             </div>
             <div>
-              <p className="text-4xl font-light">{result.carbG}g</p>
+              <p className="text-4xl font-light text-white">{result.carbG}g</p>
               <p className="mt-2 text-sm uppercase tracking-wide text-white/50">Carbs</p>
             </div>
             <div>
-              <p className="text-4xl font-light">{result.fatG}g</p>
+              <p className="text-4xl font-light text-white">{result.fatG}g</p>
               <p className="mt-2 text-sm uppercase tracking-wide text-white/50">Fat</p>
             </div>
           </div>
