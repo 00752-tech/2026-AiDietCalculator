@@ -5,9 +5,9 @@ import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/tools/ideal-weight-calculator' },
-  title: "Ideal Weight Calculator: AI-Driven Health Insights",
+  title: "Ideal Weight Calculator: Estimate Your Target Weight",
   description:
-    "Calculate your ideal weight range with our AI-driven tool. Get health-focused metrics based on your height and sex.",
+    "Estimate an ideal body weight from your height and sex. It's a reference estimate, not a complete measure of health.",
 }
 
 const breadcrumbSchema = generateBreadcrumbSchema([
@@ -19,7 +19,7 @@ export default function IdealWeightCalculatorPage() {
   return (
     <ToolShell
       title="Ideal Weight Calculator"
-      description="Calculate your ideal weight range based on your height and sex."
+      description="Estimate your ideal weight based on your height and sex."
     >
       <script
         type="application/ld+json"

@@ -5,9 +5,9 @@ import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/tools/protein-calculator' },
-  title: "Protein Calculator: AI Macro Tracker",
+  title: "Protein Calculator: Estimate Your Daily Protein Target",
   description:
-    "Optimize your protein intake with our AI-powered calculator. Get precise daily targets to build muscle and achieve your fitness goals.",
+    "Estimate your daily protein target in grams from your body weight and goal.",
 }
 
 const breadcrumbSchema = generateBreadcrumbSchema([

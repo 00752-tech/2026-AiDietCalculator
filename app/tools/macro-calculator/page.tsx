@@ -5,9 +5,9 @@ import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/tools/macro-calculator' },
-  title: "Macro Calculator: AI Nutrition & Fitness Planner",
+  title: "Macro Calculator: Protein, Carb and Fat Targets",
   description:
-    "Split your calories into protein, fat, and carbs with our AI macro calculator. Get custom nutritional targets to support your fitness journey.",
+    "Split your daily calories into protein, carbohydrate and fat targets for your goal, based on your body metrics.",
 }
 
 const breadcrumbSchema = generateBreadcrumbSchema([

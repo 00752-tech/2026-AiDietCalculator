@@ -5,9 +5,9 @@ import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema"
 
 export const metadata: Metadata = {
   alternates: { canonical: '/tools/bmi-calculator' },
-  title: "BMI Calculator: AI-Powered Body Metrics",
+  title: "BMI Calculator: Check Your Body Mass Index",
   description:
-    "Instantly calculate your BMI with our AI tool. Track your body metrics and stay on top of your fitness journey with data-driven accuracy.",
+    "Calculate your BMI from height and weight and see which category it falls in. BMI is a quick screening number, not a full picture of health.",
 }
 
 const breadcrumbSchema = generateBreadcrumbSchema([
