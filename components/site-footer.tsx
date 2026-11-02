@@ -8,10 +8,7 @@ export function SiteFooter() {
         <nav aria-label="Footer" className="flex gap-5">
           <Link href="/about-us" className="hover:text-[#0E7C7B]">About</Link>
           <Link href="/privacy-policy" className="hover:text-[#0E7C7B]">Privacy Policy</Link>
-          <div
-            google-add-preferred-source-btn=""
-            data-theme="light"
-          />
+
         </nav>
       </div>
     </footer>

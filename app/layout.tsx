@@ -130,10 +130,6 @@ export default function RootLayout({
       className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} bg-background`}
     >
       <head>
-        <Script
-          src="https://news.google.com/swg/js/v1/publisher.js"
-          strategy="afterInteractive"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
