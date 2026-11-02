@@ -131,8 +131,8 @@ export default function RootLayout({
     >
       <head>
         <Script
-          src="https://www.gstatic.com/preferredsources/v1/preferredsources.js"
-          strategy="lazyOnload"
+          src="https://news.google.com/swg/js/v1/publisher.js"
+          strategy="afterInteractive"
         />
         <script
           type="application/ld+json"
