@@ -217,7 +217,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Affiliate CTA & Google AI Answers */}
+          {/* Affiliate CTA */}
           <div className="mt-12 flex flex-col items-center justify-center gap-6 text-center">
             <a
               href={AFFILIATE_OFFER_URL}
@@ -232,17 +232,6 @@ export default function HomePage() {
               through this link, at no additional cost to you.
             </p>
 
-            <div className="pt-2">
-              <a
-                href="https://www.google.com/preferences/source?q=aidietcalculator.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#0E7C7B] bg-white px-5 py-2.5 text-sm font-medium text-[#0E7C7B] shadow-sm hover:bg-emerald-50/50 transition-colors"
-              >
-                <span className="text-base font-bold">✦</span>
-                Add AI Diet Calculator to Google AI Answers
-              </a>
-            </div>
           </div>
         </div>
       </section>
