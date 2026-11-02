@@ -130,14 +130,14 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
           margin: '25px 0', 
           borderRadius: '5px' 
         }}>
-          <p style={{ margin: '0 0 10px 0', color: '#ff4d4d', fontWeight: 700, fontSize: '1.17em' }}>🚨 CRITICAL METABOLIC BREAKTHROUGH</p>
+          <p style={{ margin: '0 0 10px 0', color: '#ff4d4d', fontWeight: 700, fontSize: '1.17em' }}>A closer look at Gluco6</p>
           <p style={{ fontSize: '14px', lineHeight: '1.5', margin: '0 0 15px 0' }}>
-            Calculators only reveal your raw mathematical caloric limits. If defensive hunger spikes and metabolic plateaus keep stopping your progress, macro tracking alone isn't enough. Berberine activates key AMPK pathways to curb cravings and ignite fat oxidation. Skip the heavy pills and injections—this needle-free, plant-derived transdermal patch delivers continuous, slow-release satiety support all day long.
+            Calculators and macro tracking give you numbers, but metabolic health involves more than calories alone. If you would like to explore further, here is a closer look at Gluco6, including its ingredients and product details.
           </p>
           <a 
             href={trackingLink}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="sponsored nofollow noopener"
             style={{ 
               display: 'inline-block',
               background: '#ff4d4d', 
@@ -149,8 +149,11 @@ export default async function ProgrammaticDietPage({ params }: PageProps) {
               fontSize: '15px'
             }}
           >
-            👉 Recommended Next Step For Your Results →
+            Learn more about Gluco6 →
           </a>
+          <p style={{ fontSize: '11px', lineHeight: '1.4', margin: '12px 0 0 0', color: '#aaa' }}>
+            Affiliate disclosure: we may earn a commission if you purchase through this link, at no extra cost to you. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+          </p>
         </div>
 
         {/* Zero-Bloat Raw Semantic Body Stream */}
