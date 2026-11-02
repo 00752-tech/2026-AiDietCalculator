@@ -65,35 +65,35 @@ const jsonLd = [
 const METABOLIC_COMPOUNDS = [
   {
     name: "Sukre",
-    tag: "Glucose Absorption Support",
+    tag: "Featured Formula Ingredient",
     badgeColor: "bg-amber-100 text-amber-700 border-amber-200",
     description:
-      "A proprietary ingredient featured in Gluco6 and designed to support healthy glucose absorption and normal blood sugar levels.",
-    target: "Target: Glucose Absorption & Blood Sugar Support",
+      "A proprietary ingredient identified as part of the Gluco6 formula. Refer to the product label and manufacturer materials for its composition and details.",
+    target: "Ingredient listed in the formula",
   },
   {
     name: "TeaCrine",
-    tag: "Metabolic & Energy Support",
+    tag: "Branded Ingredient",
     badgeColor: "bg-purple-100 text-purple-700 border-purple-200",
     description:
-      "A branded extract derived from tea that Gluco6 includes to support healthy glucose metabolism, mental energy, focus, and overall metabolic function.",
-    target: "Target: Glucose Metabolism & Daily Energy",
+      "A branded ingredient identified in the Gluco6 formula. Refer to the product label and manufacturer materials for its specifications.",
+    target: "Ingredient listed in the formula",
   },
   {
     name: "Gymnema Sylvestre",
-    tag: "Blood Sugar Support",
+    tag: "Botanical Ingredient",
     badgeColor: "bg-blue-100 text-blue-700 border-blue-200",
     description:
-      "A botanical traditionally used in metabolic health formulas and included in Gluco6 to support healthy glucose levels and help manage sugar cravings.",
-    target: "Target: Glucose Regulation & Craving Support",
+      "A botanical ingredient listed in the Gluco6 formula. Refer to the product label and manufacturer materials for details.",
+    target: "Ingredient listed in the formula",
   },
   {
     name: "Chromium",
-    tag: "Insulin Sensitivity Support",
+    tag: "Essential Trace Mineral",
     badgeColor: "bg-emerald-100 text-emerald-700 border-emerald-200",
     description:
-      "An essential trace mineral included in Gluco6 to support normal insulin function and healthy blood sugar levels.",
-    target: "Target: Insulin Function & Blood Sugar Balance",
+      "An essential trace mineral listed in the Gluco6 formula. Refer to the product label and manufacturer materials for details.",
+    target: "Ingredient listed in the formula",
   },
 ]
 
@@ -139,13 +139,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 text-center max-w-2xl mx-auto">
             <h2 className="font-serif text-3xl font-normal text-[#0E7C7B]">
-              Metabolic Compounds &amp; Mechanisms
+              Ingredients Featured in Gluco6
             </h2>
 
             <p className="mt-3 text-sm md:text-base text-slate-600">
-              Explore the ingredients and metabolic pathways featured in
-              Gluco6, including compounds associated with glucose regulation,
-              blood sugar balance, and metabolic support.
+              Explore the ingredients listed in the Gluco6 formula. The
+              descriptions below provide general ingredient information and
+              are not promises of specific health outcomes.
             </p>
 
             {/* Micro Affiliate Disclaimer */}
@@ -200,8 +200,8 @@ export default function HomePage() {
 
               <p className="mt-3 text-sm md:text-base text-slate-600">
                 Take a closer look at the formula, its featured ingredients,
-                and the daily supplement designed to support healthy blood
-                sugar and glucose metabolism.
+                and the product information before deciding whether it is
+                appropriate for you.
               </p>
             </div>
 
@@ -222,11 +222,15 @@ export default function HomePage() {
             <a
               href={AFFILIATE_OFFER_URL}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="sponsored nofollow noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-[#047857] px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-[#065F46] hover:scale-[1.02] transition-all"
             >
-              Explore Gluco6 for Blood Sugar Support →
+              Explore Gluco6 →
             </a>
+            <p className="max-w-xl text-xs leading-relaxed text-slate-500">
+              Affiliate disclosure: We may earn a commission if you purchase
+              through this link, at no additional cost to you.
+            </p>
 
             <div className="pt-2">
               <a
