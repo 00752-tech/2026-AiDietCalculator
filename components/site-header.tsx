@@ -49,8 +49,9 @@ export function SiteHeader() {
         <Link
           href="/"
           onClick={close}
-          className={`py-3 font-serif text-xl text-[#0E7C7B] ${focus}`}
+          className={`flex items-center gap-2 py-2.5 font-serif text-2xl text-[#0E7C7B] ${focus}`}
         >
+          <img src="/favicon-96x96.png" alt="" width={28} height={28} className="h-7 w-7 rounded-md" />
           AI Diet Calculator
         </Link>
 

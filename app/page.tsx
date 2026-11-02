@@ -113,7 +113,7 @@ export default function HomePage() {
             <h1 className="mb-4 font-serif text-4xl font-light leading-tight text-[#0E7C7B] md:text-5xl">
               Your Metabolic Diagnostic
             </h1>
-            <p className="text-lg text-secondary">
+            <p className="text-lg text-[#0F1B2A]/70">
               Real numbers for your body. Built on the Mifflin-St Jeor
               equation, a widely used method for estimating resting energy
               expenditure.
